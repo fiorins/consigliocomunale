@@ -17,7 +17,7 @@ import {
 import { useDisclosure } from "@chakra-ui/react";
 import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";
-import MayorsButtons from "./MayorsButtons";
+import MayorsButtons from "./Menu";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
