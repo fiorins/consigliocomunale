@@ -32,10 +32,11 @@ const HeaderM = () => {
 
   return (
     <>
-      <Center bg="#D3A673" p={{ base: 8 }} color="white">
+      <Center bg="#ECE2D0" p={{ base: 8 }} color="white">
         <VStack spacing={8}>
           <HStack>
             <Text
+              color="black"
               fontSize="3xl"
               fontWeight="bold"
               textAlign={["left", "left", "center"]}
@@ -47,8 +48,8 @@ const HeaderM = () => {
                 toggled={mobileMenu}
                 toggle={toggleMenu}
                 direction="left"
+                color="black"
                 rounded
-                color="#fff"
               />
             ) : (
               ""

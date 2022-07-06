@@ -1,16 +1,14 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { Text, Box, Icon, SimpleGrid, Divider } from "@chakra-ui/react";
+import React from "react";
+import { Text, Box, SimpleGrid, Icon, Divider } from "@chakra-ui/react";
 import { HiLibrary, HiUserGroup } from "react-icons/hi";
 import { IoIosPaper } from "react-icons/io";
 import TableBadgeCell from "../components/TableBadgeCell";
 import TableTextCell from "../components/TableTextCell";
 import TableIconTextCell from "../components/TableIconTextCell";
 
-const Card: NextPage = () => {
+export const Card = () => {
   return (
-    <Box rounded="lg" bg="white" boxShadow="base" p={4}>
+    <Box rounded="lg" bg="orange.50" boxShadow="base" p={4}>
       <Text
         px={2}
         py={4}
@@ -64,5 +62,3 @@ const Card: NextPage = () => {
     </Box>
   );
 };
-
-export default Card;

@@ -9,7 +9,7 @@ type Props = {
 
 const TableIconTextCell = ({ numberCell, textCell, children }: Props) => {
   return (
-    <Center rounded="lg" color="gray.400" py={{ base: 4, md: 8 }}>
+    <Center rounded="lg" color="gray.400" py={{ base: 4, md: 8 }} px={2}>
       <Flex flexDirection="column" alignItems="center">
         <Flex flexDirection="row" alignItems="center">
           {children}

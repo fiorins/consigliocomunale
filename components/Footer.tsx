@@ -18,7 +18,7 @@ import { HiCode } from "react-icons/hi";
 const Footer = () => {
   return (
     <>
-      <Center bg="tomato" p={{ base: 8 }} color="white">
+      <Center bg="#ECE2D0" p={{ base: 8 }} color="black">
         <Flex flexDirection="row" alignItems="center">
           <Text fontSize="md" fontWeight="bold">
             Trovi&nbsp;
@@ -27,7 +27,7 @@ const Footer = () => {
             </Link>
             &nbsp;il codice sorgente&nbsp;
           </Text>
-          <Icon as={HiCode} color="white" />
+          <Icon as={HiCode} color="black" />
         </Flex>
       </Center>
     </>

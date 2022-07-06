@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#2BB0EC" />
       </Head>
       <HeaderM />
-      <Box as="main" px={{ base: 4, md: 16 }} py={{ base: 8 }}>
+      <Box as="main" bg="#ECE2D0" px={{ base: 4, md: 16 }} py={{ base: 8 }}>
         <Component {...pageProps} />
       </Box>
       <Footer />

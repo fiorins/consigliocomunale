@@ -39,17 +39,17 @@ export default function MayorsButtons() {
   return (
     <Wrap spacing={8}>
       <WrapItem>
-        <NextLink href="/catalog" passHref>
+        <NextLink href="/paliotta-2" passHref>
           <Button {...button_inactive}>Paliotta II</Button>
         </NextLink>
       </WrapItem>
       <WrapItem>
-        <NextLink href="/another" passHref>
+        <NextLink href="/grando-1" passHref>
           <Button {...button_inactive}>Grando I</Button>
         </NextLink>
       </WrapItem>
       <WrapItem>
-        <NextLink href="/catalog" passHref>
+        <NextLink href="/grando-2" passHref>
           <Button {...button_active}>Grando II</Button>
         </NextLink>
       </WrapItem>
