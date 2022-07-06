@@ -1,3 +1,4 @@
+import type { NextPage } from "next";
 import {
   Center,
   Text,
@@ -8,56 +9,55 @@ import {
   ButtonGroup,
   Circle,
   Square,
+  useBreakpointValue,
+  useMediaQuery,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import { Cross as Hamburger } from "hamburger-react";
+import { Squash as Hamburger } from "hamburger-react";
+import { useState } from "react";
+import MayorsButtons from "./MayorsButtons";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  return (
-    <>
-      <Center bg="gray.200" p={{ base: 8 }} color="white">
-        <VStack>
-          <Text fontSize="4xl" fontWeight="bold" textAlign={"center"}>
-            Open Data Ladispoli Consigli Comunali
-          </Text>
-          <ButtonGroup gap="4" p={{ base: 8 }}>
-            <Button bg="red.400" colorScheme="red">
-              Paliotta II
-            </Button>
-            <Button bg="red.400" colorScheme="red">
-              Grando I
-            </Button>
-            <Button bg="red.700" colorScheme="red">
-              Grando II
-            </Button>
-          </ButtonGroup>
-        </VStack>
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const toggleMenu = () => {
+    setMobileMenu(!mobileMenu);
+  };
 
-        {/* 
-        <VStack>
+  const variantValue = useBreakpointValue({ base: "outline", md: "solid" });
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
+
+  return (
+    <Center bg="#ECE2D0" p={{ base: 8 }} color="white">
+      <VStack spacing={8}>
+        <HStack>
           <Text
-            fontSize="4xl"
+            color="black"
+            fontSize="3xl"
             fontWeight="bold"
             textAlign={["left", "left", "center"]}
           >
-            Open Data Ladispoli Consigli Comunali
+            Ladispoli Consiglio Comunale
           </Text>
-          <ButtonGroup gap="4" p={{ base: 8 }}>
-            <Button bg="red.700" colorScheme="red">
-              Paliotta 2012-17
-            </Button>
-            <Button bg="red.700" colorScheme="red">
-              Grando 2017-22
-            </Button>
-            <Button variant='ghost' colorScheme="red">
-              Grando 2022-..
-            </Button>
-          </ButtonGroup> 
-        </VStack>*/}
-      </Center>
-    </>
+          {isMobile ? (
+            <Hamburger
+              toggled={mobileMenu}
+              toggle={toggleMenu}
+              direction="left"
+              color="black"
+              rounded
+            />
+          ) : (
+            ""
+          )}
+        </HStack>
+        {isMobile ? "" : <MayorsButtons />}
+        {mobileMenu ? <MayorsButtons /> : ""}
+      </VStack>
+    </Center>
   );
 };
 

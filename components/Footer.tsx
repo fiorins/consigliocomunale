@@ -17,20 +17,18 @@ import { HiCode } from "react-icons/hi";
 
 const Footer = () => {
   return (
-    <>
-      <Center bg="#ECE2D0" p={{ base: 8 }} color="black">
-        <Flex flexDirection="row" alignItems="center">
-          <Text fontSize="md" fontWeight="bold">
-            Trovi&nbsp;
-            <Link href="https://github.com" isExternal>
-              <Text as="u">qui</Text>
-            </Link>
-            &nbsp;il codice sorgente&nbsp;
-          </Text>
-          <Icon as={HiCode} color="black" />
-        </Flex>
-      </Center>
-    </>
+    <Center bg="#ECE2D0" p={{ base: 8 }} color="black">
+      <Flex flexDirection="row" alignItems="center">
+        <Text fontSize="md" fontWeight="bold">
+          Trovi&nbsp;
+          <Link href="https://github.com" isExternal>
+            <Text as="u">qui</Text>
+          </Link>
+          &nbsp;il codice sorgente&nbsp;
+        </Text>
+        <Icon as={HiCode} color="black" />
+      </Flex>
+    </Center>
   );
 };
 

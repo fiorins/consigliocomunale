@@ -17,7 +17,7 @@ import { StatsChart } from "../components/StatsChart";
 
 const Grando2: NextPage = () => {
   return (
-    //Stack could be replaced with Flex
+    //Stack could be replaced by Flex
     <Stack
       direction={["column", "column", "column", "row"]}
       spacing={[12, 12, 12, 2]}

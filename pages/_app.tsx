@@ -5,7 +5,6 @@ import Head from "next/head";
 import React from "react";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import Header from "../components/Header";
-import HeaderM from "../components/Headerm";
 import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -17,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
         <meta name="theme-color" content="#2BB0EC" />
       </Head>
-      <HeaderM />
+      <Header />
       <Box as="main" bg="#ECE2D0" px={{ base: 4, md: 16 }} py={{ base: 8 }}>
         <Component {...pageProps} />
       </Box>
