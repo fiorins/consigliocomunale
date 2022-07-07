@@ -37,6 +37,7 @@ const Grando1: NextPage = () => {
         options={options}
         ref={chartComponentRef}
       />
+      {/* <Bar options={options} data={data} /> */}
     </>
   );
 };

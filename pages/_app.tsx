@@ -1,11 +1,11 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-
 import Head from "next/head";
 import React from "react";
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Center, Box, VStack, HStack, Flex } from "@chakra-ui/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,11 +16,19 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
         <meta name="theme-color" content="#2BB0EC" />
       </Head>
-      <Header />
-      <Box as="main" bg="#ECE2D0" px={{ base: 4, md: 16 }} py={{ base: 8 }}>
-        <Component {...pageProps} />
-      </Box>
-      <Footer />
+      <VStack minH="100vh" align="stretch" spacing={0}>
+        <Header />
+        <Box
+          as="main"
+          bg="#ECE2D0"
+          px={{ base: 8, md: 16 }}
+          py={{ base: 8 }}
+          flexGrow="1"
+        >
+          <Component {...pageProps} />
+        </Box>
+        <Footer />
+      </VStack>
     </ChakraProvider>
   );
 }

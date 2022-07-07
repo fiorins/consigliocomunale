@@ -2,9 +2,9 @@ import React from "react";
 import { Text, Box, SimpleGrid, Icon, Divider } from "@chakra-ui/react";
 import { HiLibrary, HiUserGroup } from "react-icons/hi";
 import { IoIosPaper } from "react-icons/io";
-import TableBadgeCell from "../components/TableBadgeCell";
-import TableTextCell from "../components/TableTextCell";
-import TableIconTextCell from "../components/TableIconTextCell";
+import TableBadgeCell from "./card-components/TableBadgeCell";
+import TableTextCell from "./card-components/TableTextCell";
+import TableIconTextCell from "./card-components/TableIconTextCell";
 
 export const Card = () => {
   return (
@@ -45,7 +45,6 @@ export const Card = () => {
         <TableTextCell textCell="/" />
         <TableTextCell textCell="/" />
 
-        {/* 
         <TableBadgeCell textCell="2025" />
         <TableTextCell textCell="/" />
         <TableTextCell textCell="/" />
@@ -56,8 +55,7 @@ export const Card = () => {
 
         <TableBadgeCell textCell="2027" />
         <TableTextCell textCell="/" />
-        <TableTextCell textCell="/" /> 
-        */}
+        <TableTextCell textCell="/" />
       </SimpleGrid>
     </Box>
   );

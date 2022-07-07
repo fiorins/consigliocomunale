@@ -14,18 +14,18 @@ import { Stack, Flex, Center } from "@chakra-ui/react";
 import { Card } from "../components/Card";
 import { ParliamentChart } from "../components/ParliamentChart";
 import { StatsChart } from "../components/StatsChart";
+import { grando1, grando2 } from "../data/parliamentChart";
 
 const Grando2: NextPage = () => {
   return (
-    //Stack could be replaced by Flex
+    //Stack could be replaced by Flex and spacing by gap
     <Stack
       direction={["column", "column", "column", "row"]}
       spacing={[12, 12, 12, 2]}
       align="center"
     >
-      <ParliamentChart />
+      <ParliamentChart {...grando2} />
       <Card />
-      {/* <Bar options={options} data={data} /> */}
     </Stack>
   );
 };

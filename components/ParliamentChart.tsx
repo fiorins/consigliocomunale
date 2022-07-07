@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,13 +9,10 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Center } from "@chakra-ui/react";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
-//require("highcharts/modules/item-series")(Highcharts);
 
 import ItemSeries from "highcharts/modules/item-series";
-import { Tune } from "@mui/icons-material";
 
 if (typeof Highcharts === "object") {
   ItemSeries(Highcharts);
@@ -31,63 +28,17 @@ ChartJS.register(
 );
 
 export const options = {
-  plugins: {
-    title: {
-      display: true,
-      text: "Presenze e Assenze dei consiglieri alle delibere comunali",
-    },
+  title: {
+    text: "My stock chart",
   },
-  responsive: true,
-  scales: {
-    x: {
-      stacked: true,
-    },
-    y: {
-      stacked: true,
-    },
-  },
-};
-
-const labels = [
-  "Asciutto",
-  "Augello",
-  "Cervo",
-  "Ciarlantini",
-  "De Simone",
-  "Fierli",
-  "Fioravanti",
-  "Garau",
-  "Grando",
-  "Marchetti",
-  "Marcucci",
-  "Marongiu D.",
-  "Marongiu S.",
-  "Mollica Graziano",
-  "Monaco",
-  "Moretti",
-  "Paliotta",
-  "Panzini",
-  "Paparella",
-  "Pascucci",
-  "Penge",
-  "Perretta",
-  "Risso",
-  "Rosolino",
-  "Trani",
-];
-
-export const data = {
-  labels, //labels from airtable
-  datasets: [
+  series: [
     {
-      label: "2022",
-      data: [150, 34, 54],
-      backgroundColor: "rgb(255, 99, 132)",
+      data: [1, 2, 3],
     },
   ],
 };
 
-export const ParliamentChart = () => {
+export const ParliamentChart = (data: any) => {
   const [chartOptions, setChartOptions] = useState({
     chart: {
       type: "item",
@@ -97,10 +48,8 @@ export const ParliamentChart = () => {
           "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
       },
     },
+
     plotOptions: {
-      // item: {
-      //   showInLegend: true,
-      // },
       series: {
         point: {
           events: {
@@ -111,37 +60,35 @@ export const ParliamentChart = () => {
         },
       },
     },
+
     credits: {
       enabled: true,
       position: {
         align: "center",
       },
     },
+
     exporting: { enabled: false },
 
     title: {
       text: "",
     },
-    // subtitle: {
-    //   text: "Numero totale di seggi: 25",
-    // },
 
     legend: {
       useHTML: true,
       labelFormat: '{name} <span style="opacity: 0.4">{y}</span>',
-      // navigation: {
-      //   enabled: false,
-      // },
-      itemStyle: {
-        fontSize: "11px",
-      },
       layout: "horizontal",
-      //align: "center",
-      //verticalAlign: "middle",
-      //symbolRadius: 0, //for changing to square
-      padding: 3,
-      itemMarginTop: 5,
-      itemMarginBottom: 5,
+      itemMarginTop: 3,
+      // itemStyle: {
+      //   fontSize: "11px",
+      // },
+      // align: "center",
+      // symbolRadius: 0, //for changing to square
+      // padding: 3,
+      // itemMarginBottom: 5,
+      // x: -10,
+      // y: -50,
+      // borderWidth: 0,
     },
 
     series: [
@@ -173,70 +120,110 @@ export const ParliamentChart = () => {
         },
 
         // Circular options
-        center: ["50%", "88%"],
-        size: "200%",
+        center: ["50%", "85%"],
+        size: "180%",
         startAngle: -100,
         endAngle: 100,
       },
     ],
 
+    // NB: maxWidth and minWidth refer to chart sizes not screen size
     responsive: {
       rules: [
         {
           condition: {
-            maxWidth: 500,
+            maxWidth: 2048,
+            minWidth: 779,
           },
           chartOptions: {
-            legend: {
-              itemStyle: {
-                fontSize: "10px",
-              },
-              useHTML: true,
-              layout: "horizontal",
-              labelFormat: '{name} <span style="opacity: 0.4">{y}</span>',
+            chart: {
+              margin: 40,
             },
+            legend: {
+              // floating: true,
+              // alignColumns: false,
+              // enabled: false,
+              // align: "center",
+              // width: 450,
+              // x: 40,
+              // y: -10,
+              // itemWidth: 100,
+              // itemDistance: 10,
+              // symbolWidth: 7,
+              // symbolHeight: 28,
+            },
+            series: [
+              {
+                // Circular options
+                center: ["50%", "50%"],
+                size: "135%",
+                startAngle: -100,
+                endAngle: 100,
+              },
+            ],
           },
         },
         {
           condition: {
-            maxWidth: 390,
-            //maxHeight: 500, //inutile
+            maxWidth: 778,
+            minWidth: 540,
           },
           chartOptions: {
-            // chart: {
-            //   margin: 2,
-            // },
+            legend: {
+              x: 10,
+              y: 0,
+            },
+            series: [
+              {
+                // Circular options
+                center: ["50%", "80%"],
+                size: "180%",
+                startAngle: -100,
+                endAngle: 100,
+              },
+            ],
+          },
+        },
+        {
+          condition: {
+            maxWidth: 539,
+            minWidth: 310,
+          },
+          chartOptions: {
             legend: {
               itemStyle: {
-                fontSize: "8px",
+                fontSize: "9px",
               },
-              useHTML: true,
-              layout: "horizontal",
-              labelFormat: '{name} <span style="opacity: 0.4">{y}</span>',
-              //floating: true,
-              //align: true,
-              //alignColumns: true,
-              //enabled: false,
-              //align: "center",
-              //verticalAlign: "bottom",
-              //width: 700,
-              // x: 100,
-              // itemMarginTop: 1,
-              // itemDistance: 10,
-              // itemWidth: 170,
+              width: 400,
+              x: 45,
+              y: -30,
             },
-            // series: [
-            //   {
-            //     dataLabels: {
-            //       distance: -30,
-            //     },
-            //   },
-            // ],
+            series: [
+              {
+                // Circular options
+                center: ["50%", "70%"],
+                size: "160%",
+                startAngle: -100,
+                endAngle: 100,
+              },
+            ],
           },
         },
       ],
     },
   });
 
-  return <HighchartsReact highcharts={Highcharts} options={chartOptions} />;
+  // useEffect(() => {
+  //   setChartOptions(data.chartOptions);
+  // }, [data.chartOptions]);
+
+  // useEffect(() => {
+  //   setChartOptions(data);
+  // }, [data]);
+
+  return (
+    <div style={{ width: "100%" }}>
+      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+    </div>
+  );
 };

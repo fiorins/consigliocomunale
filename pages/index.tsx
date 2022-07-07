@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Router from "next/router";
+import { SpinnerCircular } from "spinners-react";
+import { Center, Box, HStack } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   //redirect to my last page
@@ -12,7 +14,11 @@ const Home: NextPage = () => {
       Router.push("/grando-2");
     }
   });
-  return <></>;
+  return (
+    <Center p={16 * 2}>
+      <SpinnerCircular color="#9B2C2C" />
+    </Center>
+  );
 };
 
 export default Home;

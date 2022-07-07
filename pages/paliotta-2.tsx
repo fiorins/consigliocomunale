@@ -60,7 +60,7 @@ interface ConsigliProps {
   data: ConsigliComunali[];
 }
 
-const Catalog: NextPage<ConsigliProps> = (props) => {
+const Paliotta2: NextPage<ConsigliProps> = (props) => {
   console.log("Props Data: ", props.data);
 
   console.log("contatore", totCount(true));
@@ -80,4 +80,4 @@ const Catalog: NextPage<ConsigliProps> = (props) => {
   );
 };
 
-export default Catalog;
+export default Paliotta2;

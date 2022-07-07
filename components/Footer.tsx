@@ -1,33 +1,23 @@
 import type { NextPage } from "next";
-import {
-  Center,
-  Text,
-  Stack,
-  HStack,
-  VStack,
-  Button,
-  ButtonGroup,
-  Circle,
-  Square,
-  Icon,
-  Flex,
-  Link,
-} from "@chakra-ui/react";
+import { Center, Text, Icon, Link } from "@chakra-ui/react";
 import { HiCode } from "react-icons/hi";
 
 const Footer = () => {
   return (
-    <Center bg="#ECE2D0" p={{ base: 8 }} color="black">
-      <Flex flexDirection="row" alignItems="center">
-        <Text fontSize="md" fontWeight="bold">
-          Trovi&nbsp;
-          <Link href="https://github.com" isExternal>
-            <Text as="u">qui</Text>
-          </Link>
-          &nbsp;il codice sorgente&nbsp;
-        </Text>
-        <Icon as={HiCode} color="black" />
-      </Flex>
+    <Center
+      bg="#ECE2D0"
+      color="black"
+      px={{ base: 8, md: 16 }}
+      py={{ base: 8 }}
+    >
+      <Text fontSize="md" fontWeight="bold">
+        Trovi&nbsp;
+        <Link href="https://github.com" isExternal>
+          <Text as="u">qui</Text>
+        </Link>
+        &nbsp;il codice sorgente&nbsp;
+      </Text>
+      <Icon as={HiCode} color="black" />
     </Center>
   );
 };
