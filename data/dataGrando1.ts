@@ -54,17 +54,6 @@ export const optionsGrando1 = {
     labelFormat: '{name} <span style="opacity: 0.4">{y}</span>',
     layout: "horizontal",
     itemMarginTop: 3,
-    width: 590,
-    // itemStyle: {
-    //   fontSize: "11px",
-    // },
-    // align: "center",
-    // symbolRadius: 0, //for changing to square
-    // padding: 3,
-    // itemMarginBottom: 5,
-    // x: -10,
-    // y: -50,
-    // borderWidth: 0,
   },
 
   series: [
@@ -98,17 +87,8 @@ export const optionsGrando1 = {
             margin: 40,
           },
           legend: {
-            // floating: true,
-            // alignColumns: false,
-            // enabled: false,
-            // align: "center",
-            // width: 450,
-            // x: 40,
-            // y: -10,
-            // itemWidth: 100,
-            // itemDistance: 10,
-            // symbolWidth: 7,
-            // symbolHeight: 28,
+            width: 600,
+            x: 30,
           },
           series: [
             {

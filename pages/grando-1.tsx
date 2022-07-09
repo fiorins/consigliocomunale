@@ -27,9 +27,9 @@ const Grando1: NextPage = () => {
       <ParliamentChart {...optionsGrando1} />
       <Card
         title="Statistiche Consiliatura 2017-2022"
-        consiglieri={25}
-        consigli={32}
-        delibere={67}
+        consiglieri={24}
+        consigliTot={32}
+        delibereTot={67}
       />
     </Stack>
   );

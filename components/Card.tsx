@@ -9,11 +9,16 @@ import TableIconTextCell from "./card-components/TableIconTextCell";
 type Props = {
   title?: string;
   consiglieri?: number;
-  consigli?: number;
-  delibere?: number;
+  consigliTot?: number;
+  delibereTot?: number;
 };
 
-export const Card = ({ title, consiglieri, consigli, delibere }: Props) => {
+export const Card = ({
+  title,
+  consiglieri,
+  consigliTot,
+  delibereTot,
+}: Props) => {
   return (
     <Box rounded="lg" bg="orange.50" boxShadow="base" p={4}>
       <Text
@@ -34,11 +39,17 @@ export const Card = ({ title, consiglieri, consigli, delibere }: Props) => {
           <Icon as={HiUserGroup} color="teal" />
         </TableIconTextCell>
 
-        <TableIconTextCell numberCell={consigli} textCell="Consigli comunali">
+        <TableIconTextCell
+          numberCell={consigliTot}
+          textCell="Consigli comunali"
+        >
           <Icon as={HiLibrary} color="teal" />
         </TableIconTextCell>
 
-        <TableIconTextCell numberCell={delibere} textCell="Delibere comunali">
+        <TableIconTextCell
+          numberCell={delibereTot}
+          textCell="Delibere comunali"
+        >
           <Icon as={IoIosPaper} color="teal" />
         </TableIconTextCell>
 

@@ -27,7 +27,7 @@ const Paliotta2: NextPage = () => {
       <ParliamentChart {...optionsPaliotta2} />
       <Card
         title="Statistiche Consiliatura 2012-2017"
-        consiglieri={17}
+        consiglieri={16}
         consigli={28}
         delibere={59}
       />

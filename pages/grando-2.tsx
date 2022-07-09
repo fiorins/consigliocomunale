@@ -1,15 +1,4 @@
 import type { NextPage } from "next";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Bar } from "react-chartjs-2";
-
 import { Stack, Flex, Center } from "@chakra-ui/react";
 import { Card } from "../components/Card";
 import { ParliamentChart } from "../components/ParliamentChart";
@@ -27,9 +16,9 @@ const Grando2: NextPage = () => {
       <ParliamentChart {...optionsGrando2} />
       <Card
         title="Statistiche Consiliatura 2022-..."
-        consiglieri={25}
-        consigli={18}
-        delibere={45}
+        consiglieri={24}
+        consigliTot={18}
+        delibereTot={45}
       />
     </Stack>
   );
