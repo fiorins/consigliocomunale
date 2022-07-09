@@ -4,7 +4,7 @@ import { Badge, Center, Flex, Icon, Text } from "@chakra-ui/react";
 type Props = {
   numberCell?: number;
   textCell?: string;
-  children?: React.ReactNode; //children?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 const TableIconTextCell = ({ numberCell, textCell, children }: Props) => {

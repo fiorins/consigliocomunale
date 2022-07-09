@@ -6,7 +6,14 @@ import TableBadgeCell from "./card-components/TableBadgeCell";
 import TableTextCell from "./card-components/TableTextCell";
 import TableIconTextCell from "./card-components/TableIconTextCell";
 
-export const Card = () => {
+type Props = {
+  title?: string;
+  consiglieri?: number;
+  consigli?: number;
+  delibere?: number;
+};
+
+export const Card = ({ title, consiglieri, consigli, delibere }: Props) => {
   return (
     <Box rounded="lg" bg="orange.50" boxShadow="base" p={4}>
       <Text
@@ -17,19 +24,21 @@ export const Card = () => {
         fontSize="lg"
         fontWeight="700"
       >
-        Statistiche Consiliatura 2022-...
+        {title}
       </Text>
-
       <SimpleGrid columns={3} spacing={0}>
-        <TableIconTextCell numberCell={25} textCell="Consiglieri eletti">
+        <TableIconTextCell
+          numberCell={consiglieri}
+          textCell="Consiglieri eletti"
+        >
           <Icon as={HiUserGroup} color="teal" />
         </TableIconTextCell>
 
-        <TableIconTextCell numberCell={19} textCell="Consigli comunali">
+        <TableIconTextCell numberCell={consigli} textCell="Consigli comunali">
           <Icon as={HiLibrary} color="teal" />
         </TableIconTextCell>
 
-        <TableIconTextCell numberCell={34} textCell="Delibere comunali">
+        <TableIconTextCell numberCell={delibere} textCell="Delibere comunali">
           <Icon as={IoIosPaper} color="teal" />
         </TableIconTextCell>
 

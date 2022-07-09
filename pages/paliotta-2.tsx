@@ -1,82 +1,37 @@
-import { NextPage } from "next";
-import Airtable from "airtable";
-import { ConsigliComunali } from "../model/consigli";
-import grando from "../data/grando.json";
+import type { NextPage } from "next";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
-export async function getStaticProps() {
-  console.log(process.env.AIRTABLE_API_KEY);
+import { Stack, Flex, Center } from "@chakra-ui/react";
+import { Card } from "../components/Card";
+import { ParliamentChart } from "../components/ParliamentChart";
+import { StatsChart } from "../components/StatsChart";
+import { optionsPaliotta2 } from "../data/dataPaliotta2";
 
-  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
-    "appjMMg2Hxsyb6seI"
-  );
-
-  const result = await base("Grando").select({}).all();
-
-  // create json as a separate file just to take a look at it
-  const result_my = JSON.stringify(
-    result.map((record) => {
-      return { id: record.id, ...record.fields };
-    }),
-    null,
-    4
-  );
-
-  const fs = require("fs");
-  fs.writeFile("./data/Grando.json", result_my, function (err: any) {
-    if (err) {
-      console.log(err);
-    }
-  });
-
-  return {
-    props: {
-      data: result.map((record) => {
-        return { id: record.id, ...record.fields };
-      }), //select data of my interest
-    },
-  };
-}
-
-function totCount(consigliere: boolean) {
-  var count = 0;
-  for (var i = 0; i < grando.length; i++) {
-    if (grando[i].Caredda == consigliere) {
-      count++;
-    }
-  }
-  return count;
-}
-function totCountYear(consigliere: boolean) {
-  var count = 0;
-  for (var i = 0; i < grando.length; i++) {
-    if (grando[i].Caredda == consigliere) {
-      count++;
-    }
-  }
-  return count;
-}
-
-interface ConsigliProps {
-  data: ConsigliComunali[];
-}
-
-const Paliotta2: NextPage<ConsigliProps> = (props) => {
-  console.log("Props Data: ", props.data);
-
-  console.log("contatore", totCount(true));
-
+const Paliotta2: NextPage = () => {
   return (
-    <div>
-      <h1>Catalog</h1>
-
-      {props.data.map((p) => {
-        return (
-          <li key={p.id}>
-            {p.Presenti} ({p.Assenti}) ({p.Ardita}){p.Anno[0]}
-          </li>
-        );
-      })}
-    </div>
+    //Stack could be replaced by Flex and spacing by gap
+    <Stack
+      direction={["column", "column", "column", "row"]}
+      spacing={[12, 12, 12, 2]}
+      align="center"
+    >
+      <ParliamentChart {...optionsPaliotta2} />
+      <Card
+        title="Statistiche Consiliatura 2012-2017"
+        consiglieri={17}
+        consigli={28}
+        delibere={59}
+      />
+    </Stack>
   );
 };
 

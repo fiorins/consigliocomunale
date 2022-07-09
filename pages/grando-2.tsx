@@ -14,7 +14,7 @@ import { Stack, Flex, Center } from "@chakra-ui/react";
 import { Card } from "../components/Card";
 import { ParliamentChart } from "../components/ParliamentChart";
 import { StatsChart } from "../components/StatsChart";
-import { grando1, grando2 } from "../data/parliamentChart";
+import { optionsGrando2 } from "../data/dataGrando2";
 
 const Grando2: NextPage = () => {
   return (
@@ -24,8 +24,13 @@ const Grando2: NextPage = () => {
       spacing={[12, 12, 12, 2]}
       align="center"
     >
-      <ParliamentChart {...grando2} />
-      <Card />
+      <ParliamentChart {...optionsGrando2} />
+      <Card
+        title="Statistiche Consiliatura 2022-..."
+        consiglieri={25}
+        consigli={18}
+        delibere={45}
+      />
     </Stack>
   );
 };

@@ -1,44 +1,37 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import { Center, Text } from "@chakra-ui/react";
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
-import HighchartsExporting from "highcharts/modules/exporting";
-import { useRef } from "react";
-
-if (typeof Highcharts === "object") {
-  HighchartsExporting(Highcharts);
-}
-
-const options: Highcharts.Options = {
-  title: {
-    text: "My chart",
-  },
-  series: [
-    {
-      type: "line",
-      data: [1, 2, 3],
-    },
-  ],
-};
+import { Stack, Flex, Center } from "@chakra-ui/react";
+import { Card } from "../components/Card";
+import { ParliamentChart } from "../components/ParliamentChart";
+import { StatsChart } from "../components/StatsChart";
+import { optionsGrando1 } from "../data/dataGrando1";
 
 const Grando1: NextPage = () => {
-  const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
   return (
-    <>
-      <Center bg="#4D7EA8" h="100px" color="white">
-        <Text fontSize="4xl" fontWeight="bold">
-          Open Data CERVETTER
-        </Text>
-      </Center>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={options}
-        ref={chartComponentRef}
+    //Stack could be replaced by Flex and spacing by gap
+    <Stack
+      direction={["column", "column", "column", "row"]}
+      spacing={[12, 12, 12, 2]}
+      align="center"
+    >
+      <ParliamentChart {...optionsGrando1} />
+      <Card
+        title="Statistiche Consiliatura 2017-2022"
+        consiglieri={25}
+        consigli={32}
+        delibere={67}
       />
-      {/* <Bar options={options} data={data} /> */}
-    </>
+    </Stack>
   );
 };
 
