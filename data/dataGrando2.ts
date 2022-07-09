@@ -154,3 +154,5 @@ export const optionsGrando2 = {
     ],
   },
 };
+
+//export const consigliTot = 8;

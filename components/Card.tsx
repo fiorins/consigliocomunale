@@ -6,19 +6,24 @@ import TableBadgeCell from "./card-components/TableBadgeCell";
 import TableTextCell from "./card-components/TableTextCell";
 import TableIconTextCell from "./card-components/TableIconTextCell";
 
-type Props = {
+interface CardProps {
   title?: string;
   consiglieri?: number;
   consigliTot?: number;
   delibereTot?: number;
-};
+  consigliAnno1?: number;
+  consigliAnno2?: number;
+  consigliAnno3?: number;
+  consigliAnno4?: number;
+  consigliAnno5?: number;
+  delibereAnno1?: number;
+  delibereAnno2?: number;
+  delibereAnno3?: number;
+  delibereAnno4?: number;
+  delibereAnno5?: number;
+}
 
-export const Card = ({
-  title,
-  consiglieri,
-  consigliTot,
-  delibereTot,
-}: Props) => {
+export const Card: React.FC<CardProps> = (props) => {
   return (
     <Box rounded="lg" bg="orange.50" boxShadow="base" p={4}>
       <Text
@@ -29,25 +34,25 @@ export const Card = ({
         fontSize="lg"
         fontWeight="700"
       >
-        {title}
+        {props.title}
       </Text>
       <SimpleGrid columns={3} spacing={0}>
         <TableIconTextCell
-          numberCell={consiglieri}
+          numberCell={props.consiglieri}
           textCell="Consiglieri eletti"
         >
           <Icon as={HiUserGroup} color="teal" />
         </TableIconTextCell>
 
         <TableIconTextCell
-          numberCell={consigliTot}
+          numberCell={props.consigliTot}
           textCell="Consigli comunali"
         >
           <Icon as={HiLibrary} color="teal" />
         </TableIconTextCell>
 
         <TableIconTextCell
-          numberCell={delibereTot}
+          numberCell={props.delibereTot}
           textCell="Delibere comunali"
         >
           <Icon as={IoIosPaper} color="teal" />
@@ -58,19 +63,19 @@ export const Card = ({
         <Divider orientation="horizontal" />
 
         <TableBadgeCell textCell="2022" />
-        <TableTextCell textCell="17" />
+        <TableTextCell textCell={props.consigliAnno1} />
         <TableTextCell textCell="43" />
 
         <TableBadgeCell textCell="2023" />
-        <TableTextCell textCell="/" />
+        <TableTextCell textCell={props.consigliAnno2} />
         <TableTextCell textCell="/" />
 
         <TableBadgeCell textCell="2025" />
-        <TableTextCell textCell="/" />
+        <TableTextCell textCell={props.consigliAnno3} />
         <TableTextCell textCell="/" />
 
         <TableBadgeCell textCell="2026" />
-        <TableTextCell textCell="/" />
+        <TableTextCell textCell={props.consigliAnno4} />
         <TableTextCell textCell="/" />
 
         <TableBadgeCell textCell="2027" />
@@ -79,4 +84,10 @@ export const Card = ({
       </SimpleGrid>
     </Box>
   );
+};
+
+Card.defaultProps = {
+  consiglieri: NaN,
+  consigliTot: NaN,
+  delibereTot: 0,
 };

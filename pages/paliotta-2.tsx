@@ -28,8 +28,8 @@ const Paliotta2: NextPage = () => {
       <Card
         title="Statistiche Consiliatura 2012-2017"
         consiglieri={16}
-        consigli={28}
-        delibere={59}
+        consigliTot={28}
+        delibereTot={59}
       />
     </Stack>
   );
