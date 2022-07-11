@@ -38,7 +38,7 @@ export async function getStaticProps() {
     props: {
       data: result.map((record) => {
         return { id: record.id, ...record.fields };
-      }), //select data of my interest
+      }), //select data of my interest (https://airtable.com/api/meta)
     },
   };
 }
