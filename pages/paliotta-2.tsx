@@ -14,7 +14,7 @@ import { Stack, Flex, Center } from "@chakra-ui/react";
 import { Card } from "../components/Card";
 import { ParliamentChart } from "../components/ParliamentChart";
 import { StatsChart } from "../components/StatsChart";
-import { optionsPaliotta2 } from "../data/dataPaliotta2";
+import { optionsPaliotta2 } from "../data/parliament-chart/dataPaliotta2";
 
 const Paliotta2: NextPage = () => {
   return (

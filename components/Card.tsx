@@ -25,15 +25,8 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = (props) => {
   return (
-    <Box rounded="lg" bg="orange.50" boxShadow="base" p={4}>
-      <Text
-        px={2}
-        py={4}
-        textAlign="center"
-        color="black"
-        fontSize="lg"
-        fontWeight="700"
-      >
+    <Box rounded="3xl" bg="orange.50" py={6} px={4}>
+      <Text textAlign="center" color="black" fontSize="lg" fontWeight="700">
         {props.title}
       </Text>
       <SimpleGrid columns={3} spacing={0}>

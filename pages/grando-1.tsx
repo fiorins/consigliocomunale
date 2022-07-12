@@ -14,7 +14,7 @@ import { Stack, Flex, Center } from "@chakra-ui/react";
 import { Card } from "../components/Card";
 import { ParliamentChart } from "../components/ParliamentChart";
 import { StatsChart } from "../components/StatsChart";
-import { optionsGrando1 } from "../data/dataGrando1";
+import { optionsGrando1 } from "../data/parliament-chart/dataGrando1";
 
 const Grando1: NextPage = () => {
   return (
