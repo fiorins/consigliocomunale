@@ -7,23 +7,13 @@ import TableTextCell from "./card-components/TableTextCell";
 import TableIconTextCell from "./card-components/TableIconTextCell";
 
 interface CardProps {
-  title?: string;
-  consiglieri?: number;
-  consigliTot?: number;
-  delibereTot?: number;
-  consigliAnno?: number[];
-  delibereAnno?: number[];
-
-  // consigliAnno1?: number;
-  // consigliAnno2?: number;
-  // consigliAnno3?: number;
-  // consigliAnno4?: number;
-  // consigliAnno5?: number;
-  // delibereAnno1?: number;
-  // delibereAnno2?: number;
-  // delibereAnno3?: number;
-  // delibereAnno4?: number;
-  // delibereAnno5?: number;
+  title: string;
+  consiglieri: number;
+  consigliTot: number;
+  delibereTot: number;
+  anno: string[];
+  consigliAnno: number[];
+  delibereAnno: number[];
 }
 
 export const Card: React.FC<CardProps> = (props) => {
@@ -39,14 +29,12 @@ export const Card: React.FC<CardProps> = (props) => {
         >
           <Icon as={HiUserGroup} color="teal" />
         </TableIconTextCell>
-
         <TableIconTextCell
           numberCell={props.consigliTot}
           textCell="Consigli comunali"
         >
           <Icon as={HiLibrary} color="teal" />
         </TableIconTextCell>
-
         <TableIconTextCell
           numberCell={props.delibereTot}
           textCell="Delibere comunali"
@@ -58,34 +46,24 @@ export const Card: React.FC<CardProps> = (props) => {
         <Divider orientation="horizontal" />
         <Divider orientation="horizontal" />
 
-        {/* fare un mapping */}
-        <TableBadgeCell textCell="2022" />
-        <TableTextCell textCell={props.consigliAnno} />
-        <TableTextCell textCell="43" />
-
-        <TableBadgeCell textCell="2023" />
-        <TableTextCell textCell={props.consigliAnno} />
-        <TableTextCell textCell="/" />
-
-        <TableBadgeCell textCell="2025" />
-        <TableTextCell textCell={props.consigliAnno} />
-        <TableTextCell textCell="/" />
-
-        <TableBadgeCell textCell="2026" />
-        <TableTextCell textCell={props.consigliAnno} />
-        <TableTextCell textCell="/" />
-
-        <TableBadgeCell textCell="2027" />
-        <TableTextCell textCell="/" />
-        <TableTextCell textCell="/" />
+        {props.anno.map((el: any, i: any) => (
+          <React.Fragment key={el}>
+            <TableBadgeCell textCell={props.anno[i]} />
+            <TableTextCell textCell={props.consigliAnno[i]} />
+            <TableTextCell textCell={props.delibereAnno[i]} />
+          </React.Fragment>
+        ))}
       </SimpleGrid>
     </Box>
   );
 };
 
 Card.defaultProps = {
+  title: "Consiliatura",
   consiglieri: NaN,
   consigliTot: NaN,
-  delibereTot: 0,
-  consigliAnno: [0],
+  delibereTot: NaN,
+  anno: ["-"],
+  consigliAnno: [NaN],
+  delibereAnno: [NaN],
 };

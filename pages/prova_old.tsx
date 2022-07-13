@@ -101,7 +101,7 @@ const ProvaOld: NextPage<ConsigliProps> = (props) => {
           </li>
         );
       })}
-      <Card consigliTot={totCount(true)} />
+      {/* <Card consigliTot={totCount(true)} /> */}
     </div>
   );
 };

@@ -1,9 +1,10 @@
 /** return a list with two lists (attendances and absences) */
 
 export const councilorsData = (my_data: any, my_list: any) => {
+  let councilors_data: any = [];
+
   let attendances: any = [];
   let absences: any = [];
-  let attendance_absences: any = [];
 
   my_list.forEach((i: any) => {
     let result = my_data.reduce((sums: any, entry: any) => {
@@ -14,7 +15,7 @@ export const councilorsData = (my_data: any, my_list: any) => {
     absences.push(result["undefined"]); //pick absence
   });
 
-  attendance_absences.push(attendances, absences);
+  councilors_data.push(attendances, absences);
 
-  return attendance_absences;
+  return councilors_data;
 };

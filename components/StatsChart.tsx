@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import type { NextPage } from "next";
 import {
   Chart as ChartJS,
@@ -102,7 +102,9 @@ export const data = {
   ],
 };
 
-export const StatsChart = () => {
+export const StatsChart = (my_data: any, my_list: any) => {
+  const [chartOptions, setChartOptions] = useState(my_data);
+
   return (
     <Box rounded="3xl" bg="orange.50" py={6} px={8} w={["100%"]}>
       <VStack>

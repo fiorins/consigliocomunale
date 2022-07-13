@@ -1,12 +1,12 @@
 /** return a clean set without repetition */
 
 export const councilorsList = (my_data: any) => {
-  let list_keys: string[][] = [];
+  let list_tot_keys: string[][] = [];
   my_data.forEach((i: any) => {
-    return list_keys.push(Object.keys(i));
+    return list_tot_keys.push(Object.keys(i));
   });
 
-  let merged: string[] = list_keys.flat();
+  let merged = list_tot_keys.flat();
   let uniques = Array.from(new Set(merged));
 
   const toRemove = [
@@ -19,9 +19,7 @@ export const councilorsList = (my_data: any) => {
     "Assenti",
   ];
   const filtered = uniques.filter((i: any) => !toRemove.includes(i));
-  const sorted = Array.from(filtered).sort();
+  const councilors_list = filtered.sort();
 
-  const councilors_set = new Set(sorted);
-
-  return councilors_set;
+  return councilors_list;
 };
