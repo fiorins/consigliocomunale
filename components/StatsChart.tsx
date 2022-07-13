@@ -86,8 +86,10 @@ export const data = {
   labels,
   datasets: [
     {
+      // fill: true,
       label: "Assenze",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })), //anche negativi volendo
+      //data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })), //anche negativi volendo
+      data: [20, 6, 39, 75, 59, 19, 2, 44, 29, 21, 12, 67, 15, 23],
       backgroundColor: "rgb(255, 99, 132)",
       //backgroundColor: "rgba(255, 99, 132, 0.5)",
     },

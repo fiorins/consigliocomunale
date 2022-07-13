@@ -1,144 +1,118 @@
 [
-    {
-        "id": "recBXOL05o8SJyHc8",
-        "Consiglio_Num": 3,
-        "Ardita": true,
-        "Ascani": true,
-        "Data": "31 Luglio",
-        "Anno": [
-            "2017"
-        ],
-        "Delibera_Num": 39,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 5,
-        "Assenti": 20
-    },
-    {
-        "id": "recNnNWLD22OPK3PR",
-        "Consiglio_Num": 3,
-        "Ardita": true,
-        "Ascani": true,
-        "Data": "31 Luglio",
-        "Anno": [
-            "2017"
-        ],
-        "Delibera_Num": 40,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 5,
-        "Assenti": 20
-    },
-    {
-        "id": "recPxb6TwML6MXWPy",
-        "Consiglio_Num": 1,
-        "Ardita": true,
-        "Ascani": true,
-        "Data": "30 Gennaio",
-        "Anno": [
-            "2018"
-        ],
-        "Delibera_Num": 1,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 5,
-        "Assenti": 20
-    },
-    {
-        "id": "recR7nfhV3RedG9Pu",
-        "Consiglio_Num": 1,
-        "Ardita": true,
-        "Ascani": true,
-        "Data": "12 Luglio",
-        "Anno": [
-            "2017"
-        ],
-        "Delibera_Num": 32,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 5,
-        "Assenti": 20
-    },
-    {
-        "id": "receQounI8DMkh2Ss",
-        "Consiglio_Num": 2,
-        "Ascani": true,
-        "Data": "20 Febbraio",
-        "Anno": [
-            "2018"
-        ],
-        "Delibera_Num": 11,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 4,
-        "Assenti": 21
-    },
-    {
-        "id": "reclsOnlLMzepdU27",
-        "Consiglio_Num": 1,
-        "Ascani": true,
-        "Data": "30 Gennaio",
-        "Anno": [
-            "2018"
-        ],
-        "Delibera_Num": 3,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 4,
-        "Assenti": 21
-    },
-    {
-        "id": "recpbVX1Axic3FqD6",
-        "Consiglio_Num": 1,
-        "Ardita": true,
-        "Ascani": true,
-        "Data": "30 Gennaio",
-        "Anno": [
-            "2018"
-        ],
-        "Delibera_Num": 2,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 5,
-        "Assenti": 20
-    },
-    {
-        "id": "recrsukSpO80XxJRD",
-        "Consiglio_Num": 1,
-        "Ardita": true,
-        "Ascani": true,
-        "Data": "12 Luglio",
-        "Anno": [
-            "2017"
-        ],
-        "Delibera_Num": 33,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 5,
-        "Assenti": 20
-    },
-    {
-        "id": "recsKtZxJigxAuGSp",
-        "Consiglio_Num": 2,
-        "Ardita": true,
-        "Ascani": true,
-        "Data": "17 Luglio",
-        "Anno": [
-            "2017"
-        ],
-        "Delibera_Num": 35,
-        "Fiorenza": true,
-        "Pizzuti_Piccoli": true,
-        "Risso": true,
-        "Presenti": 5,
-        "Assenti": 20
-    }
+  {
+    "id": "recBXOL05o8SJyHc8",
+    "Consiglio_Num": 3,
+    "Ardita": true,
+    "Data": "31 Luglio",
+    "Anno": ["2017"],
+    "Delibera_Num": 39,
+    "Fiorenza": true,
+    "Risso": true,
+    "Presenti": 3,
+    "Assenti": 22
+  },
+  {
+    "id": "recNnNWLD22OPK3PR",
+    "Consiglio_Num": 3,
+    "Ardita": true,
+    "Ascani": true,
+    "Data": "31 Luglio",
+    "Anno": ["2017"],
+    "Delibera_Num": 40,
+    "Fiorenza": true,
+    "Risso": true,
+    "Presenti": 4,
+    "Assenti": 21
+  },
+  {
+    "id": "recPxb6TwML6MXWPy",
+    "Consiglio_Num": 1,
+    "Ardita": true,
+    "Ascani": true,
+    "Data": "30 Gennaio",
+    "Anno": ["2018"],
+    "Delibera_Num": 1,
+    "Pizzuti_Piccoli": true,
+    "Risso": true,
+    "Presenti": 4,
+    "Assenti": 21
+  },
+  {
+    "id": "recR7nfhV3RedG9Pu",
+    "Consiglio_Num": 1,
+    "Ascani": true,
+    "Data": "12 Luglio",
+    "Anno": ["2017"],
+    "Delibera_Num": 32,
+    "Fiorenza": true,
+    "Pizzuti_Piccoli": true,
+    "Risso": true,
+    "Presenti": 4,
+    "Assenti": 21
+  },
+  {
+    "id": "receQounI8DMkh2Ss",
+    "Consiglio_Num": 2,
+    "Ascani": true,
+    "Data": "20 Febbraio",
+    "Anno": ["2018"],
+    "Delibera_Num": 11,
+    "Fiorenza": true,
+    "Pizzuti_Piccoli": true,
+    "Risso": true,
+    "Presenti": 4,
+    "Assenti": 21
+  },
+  {
+    "id": "reclsOnlLMzepdU27",
+    "Consiglio_Num": 1,
+    "Ascani": true,
+    "Data": "30 Gennaio",
+    "Anno": ["2018"],
+    "Delibera_Num": 3,
+    "Pizzuti_Piccoli": true,
+    "Risso": true,
+    "Presenti": 3,
+    "Assenti": 22
+  },
+  {
+    "id": "recpbVX1Axic3FqD6",
+    "Consiglio_Num": 1,
+    "Ardita": true,
+    "Ascani": true,
+    "Data": "30 Gennaio",
+    "Anno": ["2018"],
+    "Delibera_Num": 2,
+    "Fiorenza": true,
+    "Presenti": 3,
+    "Assenti": 22
+  },
+  {
+    "id": "recrsukSpO80XxJRD",
+    "Consiglio_Num": 1,
+    "Ardita": true,
+    "Ascani": true,
+    "Data": "12 Luglio",
+    "Anno": ["2017"],
+    "Delibera_Num": 33,
+    "Fiorenza": true,
+    "Pizzuti_Piccoli": true,
+    "Risso": true,
+    "Presenti": 5,
+    "Assenti": 20
+  },
+  {
+    "id": "recsKtZxJigxAuGSp",
+    "Consiglio_Num": 2,
+    "Ardita": true,
+    "Ascani": true,
+    "Data": "17 Luglio",
+    "Anno": ["2017"],
+    "Delibera_Num": 35,
+    "Fiorenza": true,
+    "Pizzuti_Piccoli": true,
+    "Risso": true,
+    "Presenti": 5,
+    "Assenti": 20
+  }
 ]

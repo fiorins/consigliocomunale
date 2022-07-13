@@ -66,7 +66,7 @@ interface ConsigliProps {
   data: ConsiglioComunale[];
 }
 
-const Prova: NextPage<ConsigliProps> = (props) => {
+const ProvaOld: NextPage<ConsigliProps> = (props) => {
   console.log("Props Data: ", props.data);
   console.log("contatore", totCount(true));
 
@@ -106,4 +106,4 @@ const Prova: NextPage<ConsigliProps> = (props) => {
   );
 };
 
-export default Prova;
+export default ProvaOld;

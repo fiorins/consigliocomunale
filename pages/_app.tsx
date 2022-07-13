@@ -2,12 +2,33 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
+import { useEffect, useState } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Center, Box, VStack, HStack, Flex } from "@chakra-ui/react";
+import Airtable from "airtable";
+
+// const base = new Airtable({ apiKey: "keyZyBD1VLzle3dA9" }).base(
+//   "appjMMg2Hxsyb6seI"
+// );
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+  //   "appjMMg2Hxsyb6seI"
+  // );
+
+  // const [testz, setTests] = useState([]);
+
+  // useEffect(() => {
+  //   base("goals")
+  //     .select({ view: "Grid view" })
+  //     .eachPage((records: any, fetchNextPage) => {
+  //       setTests(records);
+  //       fetchNextPage();
+  //     });
+  // }, []);
+
   return (
     <ChakraProvider>
       <Head>

@@ -11,16 +11,19 @@ interface CardProps {
   consiglieri?: number;
   consigliTot?: number;
   delibereTot?: number;
-  consigliAnno1?: number;
-  consigliAnno2?: number;
-  consigliAnno3?: number;
-  consigliAnno4?: number;
-  consigliAnno5?: number;
-  delibereAnno1?: number;
-  delibereAnno2?: number;
-  delibereAnno3?: number;
-  delibereAnno4?: number;
-  delibereAnno5?: number;
+  consigliAnno?: number[];
+  delibereAnno?: number[];
+
+  // consigliAnno1?: number;
+  // consigliAnno2?: number;
+  // consigliAnno3?: number;
+  // consigliAnno4?: number;
+  // consigliAnno5?: number;
+  // delibereAnno1?: number;
+  // delibereAnno2?: number;
+  // delibereAnno3?: number;
+  // delibereAnno4?: number;
+  // delibereAnno5?: number;
 }
 
 export const Card: React.FC<CardProps> = (props) => {
@@ -55,20 +58,21 @@ export const Card: React.FC<CardProps> = (props) => {
         <Divider orientation="horizontal" />
         <Divider orientation="horizontal" />
 
+        {/* fare un mapping */}
         <TableBadgeCell textCell="2022" />
-        <TableTextCell textCell={props.consigliAnno1} />
+        <TableTextCell textCell={props.consigliAnno} />
         <TableTextCell textCell="43" />
 
         <TableBadgeCell textCell="2023" />
-        <TableTextCell textCell={props.consigliAnno2} />
+        <TableTextCell textCell={props.consigliAnno} />
         <TableTextCell textCell="/" />
 
         <TableBadgeCell textCell="2025" />
-        <TableTextCell textCell={props.consigliAnno3} />
+        <TableTextCell textCell={props.consigliAnno} />
         <TableTextCell textCell="/" />
 
         <TableBadgeCell textCell="2026" />
-        <TableTextCell textCell={props.consigliAnno4} />
+        <TableTextCell textCell={props.consigliAnno} />
         <TableTextCell textCell="/" />
 
         <TableBadgeCell textCell="2027" />
@@ -83,4 +87,5 @@ Card.defaultProps = {
   consiglieri: NaN,
   consigliTot: NaN,
   delibereTot: 0,
+  consigliAnno: [0],
 };
