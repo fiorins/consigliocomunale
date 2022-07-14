@@ -9,12 +9,14 @@ if (typeof Highcharts === "object") {
   ItemSeries(Highcharts);
 }
 
-export const ParliamentChart = (my_data: any) => {
-  const [chartOptions, setChartOptions] = useState(my_data);
+type ParlProps = {
+  my_options: {};
+};
 
+export const ChartParliament: React.FC<ParlProps> = (props) => {
   return (
     <Box rounded="3xl" bg="#ECE2D0" w={[300, 400, 550, 800]} p={3.5}>
-      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+      <HighchartsReact highcharts={Highcharts} options={props.my_options} />
     </Box>
   );
 };

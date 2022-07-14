@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Airtable from "airtable";
 import { ConsiglioComunale } from "../model/consiglioType";
-import grando from "../data/grando.json";
 import grando_test from "../data/grando_test.json";
 import { Card } from "../components/Card";
 
@@ -72,7 +71,7 @@ const ProvaOld: NextPage<ConsigliProps> = (props) => {
 
   function totCount(consigliere: boolean) {
     let count = 0;
-    for (let i = 0; i < grando.length; i++) {
+    for (let i = 0; i < grando_test.length; i++) {
       if (props.data[i]?.Ardita == consigliere) {
         count++;
       }
@@ -81,7 +80,7 @@ const ProvaOld: NextPage<ConsigliProps> = (props) => {
   }
   function totCountYear(consigliere: boolean) {
     let count = 0;
-    for (let i = 0; i < grando.length; i++) {
+    for (let i = 0; i < grando_test.length; i++) {
       if (props.data[i]?.Ascani == consigliere) {
         count++;
       }

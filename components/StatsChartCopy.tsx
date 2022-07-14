@@ -21,7 +21,6 @@ import {
   Container,
 } from "@chakra-ui/react";
 import { Card } from "../components/Card";
-import { optionsSindacoFake } from "../data/parliament-chart/dataSindacoFake";
 
 ChartJS.register(
   CategoryScale,
@@ -102,7 +101,7 @@ export const data = {
   ],
 };
 
-export const StatsChart = (my_data: any, my_list: any) => {
+export const StatsChartCopy = (my_data: any, my_list: any) => {
   const [chartOptions, setChartOptions] = useState(my_data);
 
   return (

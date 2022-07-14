@@ -6,7 +6,7 @@ import TableBadgeCell from "./card-components/TableBadgeCell";
 import TableTextCell from "./card-components/TableTextCell";
 import TableIconTextCell from "./card-components/TableIconTextCell";
 
-interface CardProps {
+type CardProps = {
   title: string;
   consiglieri: number;
   consigliTot: number;
@@ -14,7 +14,7 @@ interface CardProps {
   anno: string[];
   consigliAnno: number[];
   delibereAnno: number[];
-}
+};
 
 export const Card: React.FC<CardProps> = (props) => {
   return (

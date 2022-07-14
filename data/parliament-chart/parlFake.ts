@@ -1,4 +1,4 @@
-const groupSindacoFake = [
+const groupParlFake = [
   ["Cuori Ladispolani", 7, "#073D74"],
   ["Noi con Salvini", 5, "#09529A"],
   ["Fratelli d'Italia", 3, "#0B66C1"],
@@ -14,7 +14,7 @@ const groupSindacoFake = [
   ["Movimento 5 Stelle", 2, "#FFD449"],
 ];
 
-export const optionsSindacoFake = {
+export const optionsParlFake = {
   chart: {
     type: "item",
     borderRadius: 20,
@@ -61,7 +61,7 @@ export const optionsSindacoFake = {
     {
       name: "Rappresentanti",
       keys: ["name", "y", "color", "label"],
-      data: groupSindacoFake,
+      data: groupParlFake,
       dataLabels: {
         enabled: false,
         format: "{point.label}",

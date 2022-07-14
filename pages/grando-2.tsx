@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import { Stack, Flex, Center } from "@chakra-ui/react";
 import { Card } from "../components/Card";
-import { ParliamentChart } from "../components/ParliamentChart";
-import { StatsChart } from "../components/StatsChart";
+import { ParliamentChart } from "../components/ChartParliament";
+import { StatsChart } from "../components/ChartBar";
 import { optionsGrando2 } from "../data/parliament-chart/dataGrando2";
 
 const Grando2: NextPage = () => {
