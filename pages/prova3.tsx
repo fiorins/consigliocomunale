@@ -1,7 +1,8 @@
 import { NextPage } from "next";
-import { useState, useEffect } from "react";
+import Airtable from "airtable";
+import { Group1Type } from "../model/group1Type";
+import grando_test from "../data/grando_test.json";
 import { Card } from "../components/Card";
-import base from "./api/base";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
 import { councilData } from "../functions/councilData";
@@ -11,39 +12,29 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
 import { optionsBarFake } from "../data/bar-chart/barFake";
 
-const Prova: NextPage = () => {
-  const [data, setData] = useState([]);
+export async function getStaticProps() {
+  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+    "appjMMg2Hxsyb6seI"
+  );
+  const result = await base("Grando_1").select({}).all();
 
-  useEffect(() => {
-    base("Grando_1_Test")
-      .select({ view: "Grid view" })
-      .eachPage((records: any, fetchNextPage) => {
-        // setData((data) => [
-        //   ...data,
-        //   records.map((record: any) => {
-        //     return { id: record.id, ...record.fields };
-        //   }),
-        // ]);
+  return {
+    props: {
+      data: result.map((record) => {
+        return { id: record.id, ...record.fields };
+      }),
+    },
+  };
+}
 
-        // setData([
-        //   ...data,
-        //   records.map((record: any) => {
-        //     return { id: record.id, ...record.fields };
-        //   }),
-        // ]);
+interface MyProps {
+  data: Group1Type[];
+}
 
-        setData(
-          records.map((record: any) => {
-            return { id: record.id, ...record.fields };
-          })
-        );
-        fetchNextPage();
-      });
-  }, []);
-
-  const councilors_list = councilorsList(data);
-  const councilors_data = councilorsData(data, councilors_list);
-  const council_data = councilData(data);
+const Prova3: NextPage<MyProps> = (props) => {
+  const councilors_list = councilorsList(props.data);
+  const councilors_data = councilorsData(props.data, councilors_list);
+  const council_data = councilData(props.data);
 
   return (
     <VStack spacing={8}>
@@ -52,7 +43,7 @@ const Prova: NextPage = () => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        {/* <ChartParliament my_options={optionsParlFake} /> */}
+        <ChartParliament my_options={optionsParlFake} />
         <Card
           title="Statistiche Consiliatura 2017-2022"
           consiglieri={25}
@@ -72,4 +63,4 @@ const Prova: NextPage = () => {
   );
 };
 
-export default Prova;
+export default Prova3;
