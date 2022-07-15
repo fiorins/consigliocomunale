@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Airtable from "airtable";
 import { Group1Type } from "../model/group1Type";
-import grando_test from "../data/grando_test.json";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
@@ -43,7 +42,7 @@ const Prova1: NextPage<MyProps> = (props) => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        {/* <ChartParliament my_options={optionsParlFake} /> */}
+        <ChartParliament my_options={optionsParlFake} />
         <Card
           title="Statistiche Consiliatura 2017-2022"
           consiglieri={25}

@@ -9,10 +9,9 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-
 import { Stack, Flex, Center } from "@chakra-ui/react";
 import { Card } from "../components/Card";
-// import { ParliamentChart } from "../components/ChartParliament";
+import { ChartParliament } from "../components/ChartParliament";
 import { optionsPaliotta2 } from "../data/parliament-chart/dataPaliotta2";
 
 const Paliotta2: NextPage = () => {

@@ -40,7 +40,7 @@ const Prova2: NextPage = () => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        {/* <ChartParliament my_options={optionsParlFake} /> */}
+        <ChartParliament my_options={optionsParlFake} />
         <Card
           title="Statistiche Consiliatura 2017-2022"
           consiglieri={25}
