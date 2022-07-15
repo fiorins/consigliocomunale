@@ -1,7 +1,8 @@
 import { NextPage } from "next";
-import { useState, useEffect } from "react";
+import Airtable from "airtable";
+import { Group1Type } from "../model/group1Type";
+import grando_test from "../data/grando_test.json";
 import { Card } from "../components/Card";
-import base from "./api/base";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
 import { councilData } from "../functions/councilData";
@@ -11,28 +12,29 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
 import { optionsBarFake } from "../data/bar-chart/barFake";
 
-const Prova1: NextPage = () => {
-  const [data, setData] = useState<any>([]);
+export async function getStaticProps() {
+  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+    "appjMMg2Hxsyb6seI"
+  );
+  const result = await base("Grando_1").select({}).all();
 
-  useEffect(() => {
-    base("Grando_1")
-      .select({ view: "Grid view" })
-      .eachPage((records: any, fetchNextPage) => {
-        setData((prev: any) => [
-          ...prev,
-          ...records.map((record: any) => {
-            return { id: record.id, ...record.fields };
-          }),
-        ]);
+  return {
+    props: {
+      data: result.map((record) => {
+        return { id: record.id, ...record.fields };
+      }),
+    },
+  };
+}
 
-        fetchNextPage();
-      });
-  }, []);
-  console.log("data: ", data);
+interface MyProps {
+  data: Group1Type[];
+}
 
-  const councilors_list = councilorsList(data);
-  const councilors_data = councilorsData(data, councilors_list);
-  const council_data = councilData(data);
+const Prova1: NextPage<MyProps> = (props) => {
+  const councilors_list = councilorsList(props.data);
+  const councilors_data = councilorsData(props.data, councilors_list);
+  const council_data = councilData(props.data);
 
   return (
     <VStack spacing={8}>
