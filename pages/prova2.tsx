@@ -11,22 +11,51 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
 import { optionsBarFake } from "../data/bar-chart/barFake";
 
-const Prova: NextPage = () => {
+const Prova2: NextPage = () => {
   const [data, setData] = useState<any>([]);
+
+  let my_state: any = [];
 
   useEffect(() => {
     base("Grando_1_Test")
       .select({ view: "Grid view" })
       .eachPage((records: any, fetchNextPage) => {
-        setData(
-          records.map((record: any) => {
+        //setData([...my_state]);
+        // my_state = records.map((record: any) => {
+        //   return { id: record.id, ...record.fields };
+        // });
+        
+        setData((arr: any) => [
+          ...arr,
+          ...records.map((record: any) => {
             return { id: record.id, ...record.fields };
-          })
-        );
+          }),
+        ]);
+
+        // setData(
+        //   records.map((record: any) => {
+        //     return { id: record.id, ...record.fields };
+        //   })
+        // );
+
+        // setData([
+        //   ...data,
+        //   records.map((record: any) => {
+        //     return { id: record.id, ...record.fields };
+        //   }),
+        // ]);
+
+        // setData((current: any) => [
+        //   ...current,
+        //   records.map((record: any) => {
+        //     return { id: record.id, ...record.fields };
+        //   }),
+        // ]);
 
         fetchNextPage();
       });
   }, []);
+  console.log("data: ", data);
 
   const councilors_list = councilorsList(data);
   const councilors_data = councilorsData(data, councilors_list);
@@ -59,4 +88,4 @@ const Prova: NextPage = () => {
   );
 };
 
-export default Prova;
+export default Prova2;
