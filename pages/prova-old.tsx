@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Card } from "../components/Card";
 import base from "./api/base";
 import { councilorsList } from "../functions/councilorsList";
@@ -11,11 +11,11 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
 import { optionsBarFake } from "../data/bar-chart/barFake";
 
-const Prova: NextPage = () => {
+const ProvaOld: NextPage = () => {
   const [data, setData] = useState<any>([]);
 
   useEffect(() => {
-    base("Grando_1_Test")
+    base("Grando_1")
       .select({ view: "Grid view" })
       .eachPage((records: any, fetchNextPage) => {
         setData(
@@ -23,7 +23,6 @@ const Prova: NextPage = () => {
             return { id: record.id, ...record.fields };
           })
         );
-
         fetchNextPage();
       });
   }, []);
@@ -59,4 +58,4 @@ const Prova: NextPage = () => {
   );
 };
 
-export default Prova;
+export default ProvaOld;

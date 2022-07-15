@@ -1,8 +1,7 @@
 import { NextPage } from "next";
-import Airtable from "airtable";
-import { Group1Type } from "../model/group1Type";
-import grando_test from "../data/grando_test.json";
+import { useState, useEffect, useRef } from "react";
 import { Card } from "../components/Card";
+import base from "./api/base";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
 import { councilData } from "../functions/councilData";
@@ -12,29 +11,28 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
 import { optionsBarFake } from "../data/bar-chart/barFake";
 
-export async function getStaticProps() {
-  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
-    "appjMMg2Hxsyb6seI"
-  );
-  const result = await base("Grando_1").select({}).all();
+const Prova3: NextPage = () => {
+  const [data, setData] = useState<any>([]);
 
-  return {
-    props: {
-      data: result.map((record) => {
-        return { id: record.id, ...record.fields };
-      }),
-    },
-  };
-}
+  useEffect(() => {
+    let my_state: any = [];
 
-interface MyProps {
-  data: Group1Type[];
-}
+    base("Grando_1")
+      .select({ view: "Grid view" })
+      .eachPage((records: any, fetchNextPage) => {
+        my_state.push(
+          ...records.map((record: any) => {
+            return { id: record.id, ...record.fields };
+          })
+        );
+        setData(my_state);
+        fetchNextPage();
+      });
+  }, []);
 
-const Prova3: NextPage<MyProps> = (props) => {
-  const councilors_list = councilorsList(props.data);
-  const councilors_data = councilorsData(props.data, councilors_list);
-  const council_data = councilData(props.data);
+  const councilors_list = councilorsList(data);
+  const councilors_data = councilorsData(data, councilors_list);
+  const council_data = councilData(data);
 
   return (
     <VStack spacing={8}>
@@ -43,7 +41,7 @@ const Prova3: NextPage<MyProps> = (props) => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        <ChartParliament my_options={optionsParlFake} />
+        {/* <ChartParliament my_options={optionsParlFake} /> */}
         <Card
           title="Statistiche Consiliatura 2017-2022"
           consiglieri={25}
