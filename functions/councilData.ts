@@ -1,4 +1,4 @@
-/** return */
+/** return numbers of councils and resolutions */
 
 export const councilData = (my_data: any) => {
   let council_data: any = [];

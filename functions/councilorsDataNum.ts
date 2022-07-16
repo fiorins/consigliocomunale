@@ -1,7 +1,7 @@
 /** return a list with two lists (attendances and absences of councilors) */
 
-export const councilorsData = (my_data: any, my_list: any) => {
-  let councilors_data: any = [];
+export const councilorsDataNum = (my_data: any, my_list: any) => {
+  let councilors_data_num: any = [];
 
   let attendances: any = [];
   let absences: any = [];
@@ -11,11 +11,11 @@ export const councilorsData = (my_data: any, my_list: any) => {
       sums[entry[i]] = (sums[entry[i]] || 0) + 1;
       return sums;
     }, {});
-    attendances.push(result["true"]); //pick presence
-    absences.push(result["undefined"]); //pick absence
+    attendances.push(result[1]); //pick presence
+    absences.push(result[0]); //pick absence
   });
 
-  councilors_data.push(attendances, absences);
+  councilors_data_num.push(attendances, absences);
 
-  return councilors_data;
+  return councilors_data_num;
 };

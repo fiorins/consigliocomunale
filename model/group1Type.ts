@@ -2,8 +2,8 @@
 
 export interface Group1Type {
   id: string;
-  Consiglio_Num?: number;
-  Delibera_Num?: number;
+  Consiglio_Num: number;
+  Delibera_Num: number;
   Data: string;
   Anno: string[];
   Presenti: number;
@@ -13,6 +13,7 @@ export interface Group1Type {
   Augello?: boolean;
   Caredda?: boolean;
   Cavaliere?: boolean;
+  Ciampa?: boolean;
   "De Lazzaro"?: boolean;
   "De Simone"?: boolean;
   Falasca?: boolean;
@@ -24,6 +25,7 @@ export interface Group1Type {
   Grando?: boolean;
   Loddo?: boolean;
   Marchetti?: boolean;
+  "Marongiu D"?: boolean;
   Moretti?: boolean;
   Palermo?: boolean;
   Pierini?: boolean;

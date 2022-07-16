@@ -1,4 +1,4 @@
-/** return a clean set without repetition */
+/** return a clean string set without repetition of councilors name */
 
 export const councilorsList = (my_data: any) => {
   let list_tot_keys: string[][] = [];
@@ -12,9 +12,9 @@ export const councilorsList = (my_data: any) => {
   const toRemove = [
     "id",
     "Consiglio_Num",
+    "Delibera_Num",
     "Data",
     "Anno",
-    "Delibera_Num",
     "Presenti",
     "Assenti",
   ];

@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import base from "./api/base";
-import { Group1Type } from "../model/group1Type";
+import { Group1TypeNum } from "../model/group1TypeNum";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
-import { councilorsData } from "../functions/councilorsData";
+import { councilorsDataNum } from "../functions/councilorsDataNum";
 import { councilData } from "../functions/councilData";
 import { Stack, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
@@ -11,9 +11,9 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
 import { optionsBarFake } from "../data/bar-chart/barFake";
 
-//prova1
+//prova11
 export async function getStaticProps() {
-  const result = await base("Grando_1").select({}).all();
+  const result = await base("Grando_1_num").select({}).all();
 
   return {
     props: {
@@ -25,12 +25,12 @@ export async function getStaticProps() {
 }
 
 interface MyProps {
-  data: Group1Type[];
+  data: Group1TypeNum[];
 }
 
-const Prova1: NextPage<MyProps> = (props) => {
+const Prova11: NextPage<MyProps> = (props) => {
   const councilors_list = councilorsList(props.data);
-  const councilors_data = councilorsData(props.data, councilors_list);
+  const councilors_data = councilorsDataNum(props.data, councilors_list);
   const council_data = councilData(props.data);
 
   return (
@@ -60,4 +60,4 @@ const Prova1: NextPage<MyProps> = (props) => {
   );
 };
 
-export default Prova1;
+export default Prova11;
