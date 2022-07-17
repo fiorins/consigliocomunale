@@ -11,7 +11,6 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
 import { optionsBarFake } from "../data/bar-chart/barFake";
 
-//prova1
 export async function getStaticProps() {
   const result = await base("Grando_1").select({}).all();
 

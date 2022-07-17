@@ -10,13 +10,13 @@ export const optionsBarFake = {
   },
   responsive: true,
 
-  //commentando qui si toglie lo stacked
-  scales: {
-    x: {
-      stacked: true,
-    },
-    y: {
-      stacked: true,
-    },
-  },
+  /* decomment here to put stacked bars */
+  // scales: {
+  //   x: {
+  //     stacked: true,
+  //   },
+  //   y: {
+  //     stacked: true,
+  //   },
+  // },
 };

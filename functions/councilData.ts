@@ -15,7 +15,7 @@ export const councilData = (my_data: any) => {
   const years: string[] = uniques.sort();
 
   years.forEach((i: any) => {
-    const filtered = my_data.filter((x: any) => x.Anno[0] == [i]);
+    const filtered = my_data.filter((x: any) => x.Anno == [i]);
 
     //count councils per year
     let councils_list_keys: string[][] = [];
