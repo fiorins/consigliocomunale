@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 import ItemSeries from "highcharts/modules/item-series";

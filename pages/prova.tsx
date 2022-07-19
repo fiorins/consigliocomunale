@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "../components/Card";
 import base from "./api/base";
 import { councilorsList } from "../functions/councilorsList";
@@ -11,24 +11,41 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
 import { optionsBarFake } from "../data/bar-chart/barFake";
 
-const Prova3: NextPage = () => {
+const Prova: NextPage = () => {
   const [data, setData] = useState<any>([]);
 
+  // Alternate version 1
   useEffect(() => {
-    let my_state: any = [];
-
     base("Grando_1")
       .select({ view: "Grid view" })
       .eachPage((records: any, fetchNextPage) => {
-        my_state.push(
+        setData((prev: any) => [
+          ...prev,
           ...records.map((record: any) => {
             return { id: record.id, ...record.fields };
-          })
-        );
-        setData(my_state);
+          }),
+        ]);
+
         fetchNextPage();
       });
   }, []);
+
+  // Alternate version 2
+  // useEffect(() => {
+  //   let my_state: any = [];
+
+  //   base("Grando_1")
+  //     .select({ view: "Grid view" })
+  //     .eachPage((records: any, fetchNextPage) => {
+  //       my_state.push(
+  //         ...records.map((record: any) => {
+  //           return { id: record.id, ...record.fields };
+  //         })
+  //       );
+  //       setData(my_state);
+  //       fetchNextPage();
+  //     });
+  // }, []);
 
   const councilors_list = councilorsList(data);
   const councilors_data = councilorsData(data, councilors_list);
@@ -44,12 +61,12 @@ const Prova3: NextPage = () => {
         <ChartParliament my_options={optionsParlFake} />
         <Card
           title="Statistiche Consiliatura 2017-2022"
-          consiglieri={25}
-          consigliTot={council_data[0]}
-          delibereTot={council_data[1]}
-          anno={council_data[2]}
-          consigliAnno={council_data[3][0]}
-          delibereAnno={council_data[3][1]}
+          councilors={24}
+          councilsTot={council_data[0]}
+          resolutionsTot={council_data[1]}
+          yearsList={council_data[2]}
+          councilsPerYear={council_data[3][0]}
+          resolutionsPerYear={council_data[3][1]}
         />
       </Stack>
       <ChartBar
@@ -61,4 +78,4 @@ const Prova3: NextPage = () => {
   );
 };
 
-export default Prova3;
+export default Prova;

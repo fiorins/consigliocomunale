@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import type { NextPage } from "next";
+import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -22,7 +21,7 @@ ChartJS.register(
 );
 
 type BarProps = {
-  my_options: {};
+  my_options: object;
   my_list: string[];
   my_data: any;
 };

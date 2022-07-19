@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { Center, Text, Icon, Link } from "@chakra-ui/react";
 import { HiCode } from "react-icons/hi";
 

@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { Text, HStack, VStack, useMediaQuery } from "@chakra-ui/react";
 import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";

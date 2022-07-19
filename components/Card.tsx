@@ -8,12 +8,13 @@ import TableIconTextCell from "./card-components/TableIconTextCell";
 
 type CardProps = {
   title: string;
-  consiglieri: number;
-  consigliTot: number;
-  delibereTot: number;
-  anno: string[];
-  consigliAnno: number[];
-  delibereAnno: number[];
+  subtitle?: string;
+  councilors: number;
+  councilsTot: number;
+  resolutionsTot: number;
+  yearsList: string[];
+  councilsPerYear: number[];
+  resolutionsPerYear: number[];
 };
 
 export const Card: React.FC<CardProps> = (props) => {
@@ -22,35 +23,38 @@ export const Card: React.FC<CardProps> = (props) => {
       <Text textAlign="center" color="black" fontSize="lg" fontWeight="700">
         {props.title}
       </Text>
+      <Text textAlign="center" color="black" fontSize="lg" fontWeight="700">
+        {props.subtitle}
+      </Text>
       <SimpleGrid columns={3} spacing={0}>
         <TableIconTextCell
-          numberCell={props.consiglieri}
+          numberCell={props.councilors}
           textCell="Consiglieri eletti"
         >
           <Icon as={HiUserGroup} color="teal" />
         </TableIconTextCell>
         <TableIconTextCell
-          numberCell={props.consigliTot}
+          numberCell={props.councilsTot}
           textCell="Consigli comunali"
         >
           <Icon as={HiLibrary} color="teal" />
         </TableIconTextCell>
         <TableIconTextCell
-          numberCell={props.delibereTot}
+          numberCell={props.resolutionsTot}
           textCell="Delibere comunali"
         >
           <Icon as={IoIosPaper} color="teal" />
         </TableIconTextCell>
 
-        <Divider orientation="horizontal" />
-        <Divider orientation="horizontal" />
-        <Divider orientation="horizontal" />
+        {[...Array(3)].map((index) => {
+          return <Divider key={index} orientation="horizontal" />;
+        })}
 
-        {props.anno.map((el: any, i: any) => (
+        {props.yearsList.map((el: any, i: any) => (
           <React.Fragment key={el}>
-            <TableBadgeCell textCell={props.anno[i]} />
-            <TableTextCell textCell={props.consigliAnno[i]} />
-            <TableTextCell textCell={props.delibereAnno[i]} />
+            <TableBadgeCell textCell={props.yearsList[i]} />
+            <TableTextCell textCell={props.councilsPerYear[i]} />
+            <TableTextCell textCell={props.resolutionsPerYear[i]} />
           </React.Fragment>
         ))}
       </SimpleGrid>
@@ -59,11 +63,11 @@ export const Card: React.FC<CardProps> = (props) => {
 };
 
 Card.defaultProps = {
-  title: "Consiliatura",
-  consiglieri: NaN,
-  consigliTot: NaN,
-  delibereTot: NaN,
-  anno: ["-"],
-  consigliAnno: [NaN],
-  delibereAnno: [NaN],
+  title: "-",
+  councilors: NaN,
+  councilsTot: NaN,
+  resolutionsTot: NaN,
+  yearsList: ["-"],
+  councilsPerYear: [NaN],
+  resolutionsPerYear: [NaN],
 };
