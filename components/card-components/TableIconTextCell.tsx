@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Center, Flex, Icon, Text } from "@chakra-ui/react";
+import { Center, Flex, Text } from "@chakra-ui/react";
 
 type Props = {
   numberCell?: number;

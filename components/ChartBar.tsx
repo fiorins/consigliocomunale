@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
 import { Box, VStack, Text, useMediaQuery } from "@chakra-ui/react";
 
@@ -17,7 +18,8 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ChartDataLabels
 );
 
 type BarProps = {
@@ -42,11 +44,19 @@ export const ChartBar: React.FC<BarProps> = (props) => {
                 label: "Presenze",
                 data: props.my_data[0],
                 backgroundColor: "rgb(75, 192, 192)",
+                datalabels: {
+                  anchor: "end",
+                  align: "start",
+                },
               },
               {
                 label: "Assenze",
                 data: props.my_data[1],
                 backgroundColor: "rgb(255, 99, 132)",
+                datalabels: {
+                  anchor: "end",
+                  align: "start",
+                },
               },
             ],
           }}
