@@ -43,17 +43,16 @@ const Grando2: NextPage<MyProps> = (props) => {
     subtitle: "2017-...",
   };
 
-  const desktopBarOptions = {
+  const optionsBarDesktop = {
     indexAxis: "x",
     aspectRatio: 2,
     ...optionsBarFake,
   };
-  const mobileBarOptions = {
+  const optionsBarMobile = {
     indexAxis: "y",
     aspectRatio: 0.5,
     ...optionsBarFake,
   };
-  let optionsBar = isMobile ? mobileBarOptions : desktopBarOptions;
 
   return (
     <VStack spacing={8}>
@@ -74,9 +73,7 @@ const Grando2: NextPage<MyProps> = (props) => {
         />
       </Stack>
       <ChartBar
-        //my_options={optionsBar}
-        my_options={isMobile ? mobileBarOptions : desktopBarOptions}
-        //my_options={optionsBarFake} //original
+        my_options={isMobile ? optionsBarMobile : optionsBarDesktop}
         my_list={councilors_list}
         my_data={councilors_data}
       />
