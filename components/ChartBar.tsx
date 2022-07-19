@@ -27,11 +27,22 @@ type BarProps = {
 };
 
 export const ChartBar: React.FC<BarProps> = (props) => {
-  // const [isMobile] = useMediaQuery("(max-width: 500px)");
+  const [isMobile] = useMediaQuery("(max-width: 500px)");
 
-  // const desktopOpt = { indexAxis: "x", ...props.my_options };
-  // const mobileOpt = { indexAxis: "y", ...props.my_options };
-  // options={ ...(isMobile ? { ...mobileOpt } : { ...desktopOpt })}
+  let my_options_desktop = {
+    indexAxis: "x",
+    aspectRatio: 2,
+    ...props.my_options,
+  };
+  let my_options_mobile = {
+    indexAxis: "y",
+    aspectRatio: 0.5,
+    ...props.my_options,
+  };
+  let optionsBar1 = {
+    ...(isMobile ? { ...my_options_mobile } : { ...my_options_desktop }),
+  };
+  let optionsBar2 = isMobile ? my_options_mobile : my_options_desktop;
 
   return (
     <Box rounded="3xl" bg="orange.50" py={6} px={8} w={["100%"]}>
@@ -40,7 +51,9 @@ export const ChartBar: React.FC<BarProps> = (props) => {
           Presenze e Assenze dei consiglieri alle delibere comunali
         </Text>
         <Bar
-          options={props.my_options}
+          //options={props.my_options}
+          options={isMobile ? my_options_mobile : my_options_desktop}
+          //options={optionsBar1}
           data={{
             labels: props.my_list,
             datasets: [

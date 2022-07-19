@@ -12,9 +12,6 @@ export const optionsBarFake = {
   responsive: true,
   maintainAspectRatio: true,
 
-  aspectRatio: 2,
-  indexAxis: "x",
-
   // elements: {
   //   bar: {
   //     borderWidth: 2,
@@ -30,22 +27,4 @@ export const optionsBarFake = {
   //     stacked: true,
   //   },
   // },
-};
-
-export const optionsBarFakeMobile = {
-  plugins: {
-    legend: {
-      position: "bottom" as const,
-    },
-    title: {
-      display: false,
-      text: "My Title",
-    },
-  },
-
-  responsive: true,
-  maintainAspectRatio: true,
-
-  aspectRatio: 0.5,
-  indexAxis: "y",
 };
