@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import base from "./api/base";
-import { Paliotta2Type } from "../model/groupsType";
+import { group1Type } from "../model/groupsType";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
@@ -24,7 +24,7 @@ export async function getStaticProps() {
 }
 
 interface MyProps {
-  data: Paliotta2Type[];
+  data: group1Type[];
 }
 
 const Paliotta2: NextPage<MyProps> = (props) => {

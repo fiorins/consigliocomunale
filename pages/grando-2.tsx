@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import base from "./api/base";
-import { Grando2Type } from "../model/groupsType";
+import { group3Type } from "../model/groupsType";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
@@ -24,7 +24,7 @@ export async function getStaticProps() {
 }
 
 interface MyProps {
-  data: Grando2Type[];
+  data: group3Type[];
 }
 
 const Grando2: NextPage<MyProps> = (props) => {

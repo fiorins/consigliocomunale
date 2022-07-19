@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import base from "./api/base";
-import { Grando1Type } from "../model/groupsType";
+import { group1Type } from "../model/groupsType";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
@@ -8,7 +8,7 @@ import { councilData } from "../functions/councilData";
 import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParl3 } from "../data/parliament-chart/parlOpt3";
+import { optionsParl2 } from "../data/parliament-chart/parlOpt2";
 import { optionsBar } from "../data/bar-chart/barOpt";
 
 export async function getStaticProps() {
@@ -24,7 +24,7 @@ export async function getStaticProps() {
 }
 
 interface MyProps {
-  data: Grando1Type[];
+  data: group1Type[];
 }
 
 const Grando1: NextPage<MyProps> = (props) => {
@@ -61,7 +61,7 @@ const Grando1: NextPage<MyProps> = (props) => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        <ChartParliament my_options={optionsParl3} />
+        <ChartParliament my_options={optionsParl2} />
         <Card
           {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={24}

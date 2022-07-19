@@ -1,24 +1,28 @@
-const groupParlFake = [
-  ["Cuori Ladispolani", 7, "#073D74"],
-  ["Noi con Salvini", 5, "#09529A"],
-  ["Fratelli d'Italia", 3, "#0B66C1"],
-  ["Alessandro Grando", 1, "#0D7AE7"],
+const groupParl3 = [
+  ["Grando Sindaco", 4, "#073D74"],
+  ["Noi di Ladispoli", 4, "#09529A"],
+  ["Fratelli d'Italia", 2, "#0B66C1"],
+  ["Cuori Ladispolani", 2, "#0D7AE7"],
+  ["Lega", 2, "#2B8FF3"],
+  ["Forza Italia", 1, "#51A3F5"],
+  ["Alessandro Grando", 1, "#0087DC"],
 
-  ["Partito Democratico", 2, "#8F001A"],
-  ["Ladispoli Città", 2, "#B80022"],
-  ["Marco Pierini", 1, "#E00029"],
+  ["Ladispoli Attiva", 2, "#8F001A"],
+  ["Per Pascucci Sindaco", 2, "#B80022"],
+  ["Ladispoli Città", 1, "#E00029"],
+  ["Alessio Pascucci", 1, "#FF0A37"],
 
-  ["Giuseppe Loddo", 1, "#548C2F"],
+  ["Silvia per Ladispoli", 1, "#548C2F"],
+  ["Silvia Marongiu", 1, "#6EB83D"],
 
-  ["Antonio Pizzuti Piccoli", 1, "#FFC919"],
-  ["Movimento 5 Stelle", 2, "#FFD449"],
+  ["Amelia Mollica Graziano", 1, "#FFD449"],
 ];
 
-export const optionsParlFake = {
+export const optionsParl3 = {
   chart: {
     type: "item",
     borderRadius: 20,
-    backgroundColor: "#ECE2D0", //ECE2D0
+    backgroundColor: "#ECE2D0",
     style: {
       fontFamily:
         "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
@@ -61,7 +65,7 @@ export const optionsParlFake = {
     {
       name: "Rappresentanti",
       keys: ["name", "y", "color", "label"],
-      data: groupParlFake,
+      data: groupParl3,
       dataLabels: {
         enabled: false,
         format: "{point.label}",

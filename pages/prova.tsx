@@ -8,8 +8,8 @@ import { councilData } from "../functions/councilData";
 import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParlFake } from "../data/parliament-chart/parlFake";
-import { optionsBarFake } from "../data/bar-chart/barOpt";
+import { optionsParl2 } from "../data/parliament-chart/parlOpt2";
+import { optionsBar } from "../data/bar-chart/barOpt";
 
 const Prova: NextPage = () => {
   const [data, setData] = useState<any>([]);
@@ -65,12 +65,12 @@ const Prova: NextPage = () => {
   const optionsBarDesktop = {
     indexAxis: "x",
     aspectRatio: 2,
-    ...optionsBarFake,
+    ...optionsBar,
   };
   const optionsBarMobile = {
     indexAxis: "y",
     aspectRatio: 0.5,
-    ...optionsBarFake,
+    ...optionsBar,
   };
 
   return (
@@ -80,7 +80,7 @@ const Prova: NextPage = () => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        <ChartParliament my_options={optionsParlFake} />
+        <ChartParliament my_options={optionsParl2} />
         <Card
           {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={24}
