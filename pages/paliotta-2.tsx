@@ -8,8 +8,8 @@ import { councilData } from "../functions/councilData";
 import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParlFake } from "../data/parliament-chart/parlFake";
-import { optionsBarFake } from "../data/bar-chart/barFake";
+import { optionsParl1 } from "../data/parliament-chart/parlOpt1";
+import { optionsBar } from "../data/bar-chart/barOpt";
 
 export async function getStaticProps() {
   const result = await base("Paliotta_2").select({}).all();
@@ -33,6 +33,7 @@ const Paliotta2: NextPage<MyProps> = (props) => {
   const council_data = councilData(props.data);
 
   const [isMobile] = useMediaQuery("(max-width: 500px)");
+
   const defaultTitle = {
     title: "Statistiche Consiliatura 2012-2017",
     subtitle: "",
@@ -42,6 +43,17 @@ const Paliotta2: NextPage<MyProps> = (props) => {
     subtitle: "2012-2017",
   };
 
+  const optionsBarDesktop = {
+    indexAxis: "x",
+    aspectRatio: 2,
+    ...optionsBar,
+  };
+  const optionsBarMobile = {
+    indexAxis: "y",
+    aspectRatio: 0.5,
+    ...optionsBar,
+  };
+
   return (
     <VStack spacing={8}>
       <Stack
@@ -49,7 +61,7 @@ const Paliotta2: NextPage<MyProps> = (props) => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        <ChartParliament my_options={optionsParlFake} />
+        <ChartParliament my_options={optionsParl1} />
         <Card
           {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={24}
@@ -61,7 +73,7 @@ const Paliotta2: NextPage<MyProps> = (props) => {
         />
       </Stack>
       <ChartBar
-        my_options={optionsBarFake}
+        my_options={isMobile ? optionsBarMobile : optionsBarDesktop}
         my_list={councilors_list}
         my_data={councilors_data}
       />

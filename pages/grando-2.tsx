@@ -8,8 +8,8 @@ import { councilData } from "../functions/councilData";
 import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParlFake } from "../data/parliament-chart/parlFake";
-import { optionsBarFake } from "../data/bar-chart/barFake";
+import { optionsParl3 } from "../data/parliament-chart/parlOpt3";
+import { optionsBar } from "../data/bar-chart/barOpt";
 
 export async function getStaticProps() {
   const result = await base("Grando_2").select({}).all();
@@ -46,12 +46,12 @@ const Grando2: NextPage<MyProps> = (props) => {
   const optionsBarDesktop = {
     indexAxis: "x",
     aspectRatio: 2,
-    ...optionsBarFake,
+    ...optionsBar,
   };
   const optionsBarMobile = {
     indexAxis: "y",
     aspectRatio: 0.5,
-    ...optionsBarFake,
+    ...optionsBar,
   };
 
   return (
@@ -61,7 +61,7 @@ const Grando2: NextPage<MyProps> = (props) => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        <ChartParliament my_options={optionsParlFake} />
+        <ChartParliament my_options={optionsParl3} />
         <Card
           {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={24}

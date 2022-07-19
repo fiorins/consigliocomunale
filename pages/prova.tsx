@@ -5,11 +5,11 @@ import base from "./api/base";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
 import { councilData } from "../functions/councilData";
-import { Stack, VStack } from "@chakra-ui/react";
+import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
-import { optionsBarFake } from "../data/bar-chart/barFake";
+import { optionsBarFake } from "../data/bar-chart/barOpt";
 
 const Prova: NextPage = () => {
   const [data, setData] = useState<any>([]);
@@ -51,6 +51,28 @@ const Prova: NextPage = () => {
   const councilors_data = councilorsData(data, councilors_list);
   const council_data = councilData(data);
 
+  const [isMobile] = useMediaQuery("(max-width: 500px)");
+
+  const defaultTitle = {
+    title: "Statistiche Consiliatura 2000-...",
+    subtitle: "",
+  };
+  const mobileTitle = {
+    title: "Statistiche Consiliatura",
+    subtitle: "2000-...",
+  };
+
+  const optionsBarDesktop = {
+    indexAxis: "x",
+    aspectRatio: 2,
+    ...optionsBarFake,
+  };
+  const optionsBarMobile = {
+    indexAxis: "y",
+    aspectRatio: 0.5,
+    ...optionsBarFake,
+  };
+
   return (
     <VStack spacing={8}>
       <Stack
@@ -60,7 +82,7 @@ const Prova: NextPage = () => {
       >
         <ChartParliament my_options={optionsParlFake} />
         <Card
-          title="Statistiche Consiliatura 2017-2022"
+          {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={24}
           councilsTot={council_data[0]}
           resolutionsTot={council_data[1]}
@@ -70,7 +92,7 @@ const Prova: NextPage = () => {
         />
       </Stack>
       <ChartBar
-        my_options={optionsBarFake}
+        my_options={isMobile ? optionsBarMobile : optionsBarDesktop}
         my_list={councilors_list}
         my_data={councilors_data}
       />
