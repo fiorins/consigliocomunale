@@ -46,15 +46,15 @@ export const Card: React.FC<CardProps> = (props) => {
           <Icon as={IoIosPaper} color="teal" />
         </TableIconTextCell>
 
-        {[...Array(3)].map((index) => {
-          return <Divider key={index} orientation="horizontal" />;
-        })}
+        <Divider orientation="horizontal" />
+        <Divider orientation="horizontal" />
+        <Divider orientation="horizontal" />
 
-        {props.yearsList.map((el: any, i: any) => (
-          <React.Fragment key={el}>
-            <TableBadgeCell textCell={props.yearsList[i]} />
-            <TableTextCell textCell={props.councilsPerYear[i]} />
-            <TableTextCell textCell={props.resolutionsPerYear[i]} />
+        {props.yearsList.map((index: any, elem: any) => (
+          <React.Fragment key={index}>
+            <TableBadgeCell textCell={props.yearsList[elem]} />
+            <TableTextCell textCell={props.councilsPerYear[elem]} />
+            <TableTextCell textCell={props.resolutionsPerYear[elem]} />
           </React.Fragment>
         ))}
       </SimpleGrid>

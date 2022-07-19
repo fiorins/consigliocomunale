@@ -9,7 +9,10 @@ import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
 import { optionsParlFake } from "../data/parliament-chart/parlFake";
-import { optionsBarFake } from "../data/bar-chart/barFake";
+import {
+  optionsBarFake,
+  optionsBarFakeMobile,
+} from "../data/bar-chart/barFake";
 
 export async function getStaticProps() {
   const result = await base("Grando_2").select({}).all();
@@ -33,6 +36,7 @@ const Grando2: NextPage<MyProps> = (props) => {
   const council_data = councilData(props.data);
 
   const [isMobile] = useMediaQuery("(max-width: 500px)");
+
   const defaultTitle = {
     title: "Statistiche Consiliatura 2022-...",
     subtitle: "",
@@ -41,6 +45,11 @@ const Grando2: NextPage<MyProps> = (props) => {
     title: "Statistiche Consiliatura",
     subtitle: "2017-...",
   };
+
+  //togliendo indexAxis da optionsBarFake
+  // const desktopOptions = { indexAxis: "x", aspectRatio: 2, ...optionsBarFake };
+  // const mobileOptions = { indexAxis: "y", aspectRatio: 0.5, ...optionsBarFake };
+  // my_options={ ...(isMobile ? { ...mobileOpt } : { ...desktopOpt })}
 
   return (
     <VStack spacing={8}>
@@ -61,7 +70,8 @@ const Grando2: NextPage<MyProps> = (props) => {
         />
       </Stack>
       <ChartBar
-        my_options={optionsBarFake}
+        my_options={isMobile ? optionsBarFakeMobile : optionsBarFake}
+        /* className={isMobile ? optionsBarFake.indexAxis[x] : optionsBarFake.indexAxis[y]} */
         my_list={councilors_list}
         my_data={councilors_data}
       />

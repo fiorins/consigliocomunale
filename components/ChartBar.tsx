@@ -9,7 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { Box, VStack, Text } from "@chakra-ui/react";
+import { Box, VStack, Text, useMediaQuery } from "@chakra-ui/react";
 
 ChartJS.register(
   CategoryScale,
@@ -27,6 +27,12 @@ type BarProps = {
 };
 
 export const ChartBar: React.FC<BarProps> = (props) => {
+  // const [isMobile] = useMediaQuery("(max-width: 500px)");
+
+  // const desktopOpt = { indexAxis: "x", ...props.my_options };
+  // const mobileOpt = { indexAxis: "y", ...props.my_options };
+  // options={ ...(isMobile ? { ...mobileOpt } : { ...desktopOpt })}
+
   return (
     <Box rounded="3xl" bg="orange.50" py={6} px={8} w={["100%"]}>
       <VStack>
