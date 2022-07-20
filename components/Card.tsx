@@ -15,6 +15,7 @@ type CardProps = {
   yearsList: string[];
   councilsPerYear: number[];
   resolutionsPerYear: number[];
+  notes?: string;
 };
 
 export const Card: React.FC<CardProps> = (props) => {
@@ -23,9 +24,11 @@ export const Card: React.FC<CardProps> = (props) => {
       <Text textAlign="center" color="black" fontSize="lg" fontWeight="700">
         {props.title}
       </Text>
-      <Text textAlign="center" color="black" fontSize="lg" fontWeight="700">
-        {props.subtitle}
-      </Text>
+      {props.subtitle && (
+        <Text textAlign="center" color="black" fontSize="lg" fontWeight="700">
+          {props.subtitle}
+        </Text>
+      )}
       <SimpleGrid columns={3} spacing={0}>
         <TableIconTextCell
           numberCell={props.councilors}
@@ -58,6 +61,17 @@ export const Card: React.FC<CardProps> = (props) => {
           </React.Fragment>
         ))}
       </SimpleGrid>
+      {props.notes && (
+        <Text
+          textAlign="center"
+          color="black"
+          fontSize="sm"
+          fontWeight="300"
+          pt={6}
+        >
+          {props.notes}
+        </Text>
+      )}
     </Box>
   );
 };

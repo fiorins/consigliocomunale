@@ -24,7 +24,6 @@ export const optionsParl2 = {
         "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
     },
   },
-
   plotOptions: {
     series: {
       point: {
@@ -36,25 +35,24 @@ export const optionsParl2 = {
       },
     },
   },
-
   credits: {
     enabled: false,
     position: {
       align: "center",
     },
   },
-
   exporting: { enabled: false },
-
   title: {
     text: "",
   },
-
   legend: {
     useHTML: true,
     labelFormat: '{name} <span style="opacity: 0.4">{y}</span>',
     layout: "horizontal",
     itemMarginTop: 3,
+  },
+  accessibility: {
+    enabled: false,
   },
 
   series: [

@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import base from "./api/base";
-import { group1Type } from "../model/groupsType";
+import { group3Type } from "../model/groupsType";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
@@ -8,11 +8,11 @@ import { councilData } from "../functions/councilData";
 import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParl2 } from "../data/parliament-chart/parlOpt2";
+import { optionsParl3 } from "../data/parliament-chart/parlOpt3";
 import { optionsBar } from "../data/bar-chart/barOpt";
 
 export async function getStaticProps() {
-  const result = await base("Grando_1").select({}).all();
+  const result = await base("Grando_2").select({}).all();
 
   return {
     props: {
@@ -24,10 +24,10 @@ export async function getStaticProps() {
 }
 
 interface MyProps {
-  data: group1Type[];
+  data: group3Type[];
 }
 
-const Grando1: NextPage<MyProps> = (props) => {
+const Grando2: NextPage<MyProps> = (props) => {
   const councilors_list = councilorsList(props.data);
   const councilors_data = councilorsData(props.data, councilors_list);
   const council_data = councilData(props.data);
@@ -35,12 +35,12 @@ const Grando1: NextPage<MyProps> = (props) => {
   const [isMobile] = useMediaQuery("(max-width: 500px)");
 
   const defaultTitle = {
-    title: "Statistiche Consiliatura 2017-2022",
+    title: "Statistiche Consiliatura 2022-....",
     subtitle: "",
   };
   const mobileTitle = {
     title: "Statistiche Consiliatura",
-    subtitle: "2017-2022",
+    subtitle: "2022-....",
   };
 
   const optionsBarDesktop = {
@@ -61,7 +61,7 @@ const Grando1: NextPage<MyProps> = (props) => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        <ChartParliament my_options={optionsParl2} />
+        <ChartParliament my_options={optionsParl3} />
         <Card
           {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={24}
@@ -81,4 +81,4 @@ const Grando1: NextPage<MyProps> = (props) => {
   );
 };
 
-export default Grando1;
+export default Grando2;

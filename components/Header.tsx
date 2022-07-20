@@ -40,6 +40,7 @@ const Header = () => {
           ""
         )}
       </HStack>
+
       {isMobile ? "" : <Menu />}
       {mobileMenu ? <Menu /> : ""}
     </VStack>

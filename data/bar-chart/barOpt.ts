@@ -10,7 +10,11 @@ export const optionsBar = {
     datalabels: {
       color: "white",
       display: function (context: any) {
-        return context.dataset.data[context.dataIndex] > 7;
+        if (Math.max(...context.dataset.data) > 35) {
+          return context.dataset.data[context.dataIndex] > 13;
+        } else {
+          return context.dataset.data[context.dataIndex] > 2;
+        }
       },
       font: {
         weight: "bold",

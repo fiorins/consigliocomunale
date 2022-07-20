@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
       <Head>
-        <title>Prova - Davide Fiorini</title>
+        <title>Ladispoli - Consiglio Comunale</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
         <meta name="theme-color" content="#2BB0EC" />

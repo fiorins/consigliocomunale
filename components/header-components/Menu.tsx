@@ -6,13 +6,13 @@ export default function Menu() {
   return (
     <Wrap spacing={8}>
       <WrapItem>
-        <MenuLink href="/paliotta-2" textButton="Paliotta II" />
+        <MenuLink href="/paliotta2" textButton="Paliotta II" />
       </WrapItem>
       <WrapItem>
-        <MenuLink href="/grando-1" textButton="Grando I" />
+        <MenuLink href="/grando1" textButton="Grando I" />
       </WrapItem>
       <WrapItem>
-        <MenuLink href="/grando-2" textButton="Grando II" />
+        <MenuLink href="/grando2" textButton="Grando II" />
       </WrapItem>
     </Wrap>
   );

@@ -40,25 +40,24 @@ export const optionsParl3 = {
       },
     },
   },
-
   credits: {
     enabled: false,
     position: {
       align: "center",
     },
   },
-
   exporting: { enabled: false },
-
   title: {
     text: "",
   },
-
   legend: {
     useHTML: true,
     labelFormat: '{name} <span style="opacity: 0.4">{y}</span>',
     layout: "horizontal",
     itemMarginTop: 3,
+  },
+  accessibility: {
+    enabled: false,
   },
 
   series: [

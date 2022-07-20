@@ -5,14 +5,21 @@ import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
 import { councilData } from "../functions/councilData";
-import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
+import {
+  Stack,
+  useMediaQuery,
+  VStack,
+  Text,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParl1 } from "../data/parliament-chart/parlOpt1";
+import { optionsParl2 } from "../data/parliament-chart/parlOpt2";
 import { optionsBar } from "../data/bar-chart/barOpt";
 
 export async function getStaticProps() {
-  const result = await base("Paliotta_2").select({}).all();
+  const result = await base("Grando_1").select({}).all();
 
   return {
     props: {
@@ -27,7 +34,7 @@ interface MyProps {
   data: group1Type[];
 }
 
-const Paliotta2: NextPage<MyProps> = (props) => {
+const Grando1: NextPage<MyProps> = (props) => {
   const councilors_list = councilorsList(props.data);
   const councilors_data = councilorsData(props.data, councilors_list);
   const council_data = councilData(props.data);
@@ -35,12 +42,12 @@ const Paliotta2: NextPage<MyProps> = (props) => {
   const [isMobile] = useMediaQuery("(max-width: 500px)");
 
   const defaultTitle = {
-    title: "Statistiche Consiliatura 2012-2017",
+    title: "Statistiche Consiliatura 2017-2022",
     subtitle: "",
   };
   const mobileTitle = {
     title: "Statistiche Consiliatura",
-    subtitle: "2012-2017",
+    subtitle: "2017-2022",
   };
 
   const optionsBarDesktop = {
@@ -61,7 +68,7 @@ const Paliotta2: NextPage<MyProps> = (props) => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        <ChartParliament my_options={optionsParl1} />
+        <ChartParliament my_options={optionsParl2} />
         <Card
           {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={24}
@@ -77,8 +84,24 @@ const Paliotta2: NextPage<MyProps> = (props) => {
         my_list={councilors_list}
         my_data={councilors_data}
       />
+      <Text
+        textAlign="center"
+        color="black"
+        fontSize="sm"
+        fontWeight="500"
+        as="span"
+      >
+        Consiglieri dimissionari:
+        <UnorderedList textAlign="left">
+          <ListItem>Falasca lascia il 21/05/2018 ed entra Marongiu D</ListItem>
+          <ListItem>Forchetta lascia il 14/05/2019 ed entra Ciampa</ListItem>
+          <ListItem>
+            Pizzuti Piccoli lascia il 16/03/2021 ed entra Martello
+          </ListItem>
+        </UnorderedList>
+      </Text>
     </VStack>
   );
 };
 
-export default Paliotta2;
+export default Grando1;

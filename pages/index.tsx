@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     const { pathname } = Router;
     if (pathname === "/") {
-      Router.push("/grando-2");
+      Router.push("/grando1");
     }
   });
   return (
