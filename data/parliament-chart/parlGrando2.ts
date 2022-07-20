@@ -1,4 +1,4 @@
-const groupParl3 = [
+const groupGrando2 = [
   ["Grando Sindaco", 4, "#073D74"],
   ["Noi di Ladispoli", 4, "#09529A"],
   ["Fratelli d'Italia", 2, "#0B66C1"],
@@ -18,7 +18,7 @@ const groupParl3 = [
   ["Amelia Mollica Graziano", 1, "#FFD449"],
 ];
 
-export const optionsParl3 = {
+export const optionsGrando2 = {
   chart: {
     type: "item",
     borderRadius: 20,
@@ -28,7 +28,6 @@ export const optionsParl3 = {
         "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
     },
   },
-
   plotOptions: {
     series: {
       point: {
@@ -64,7 +63,7 @@ export const optionsParl3 = {
     {
       name: "Rappresentanti",
       keys: ["name", "y", "color", "label"],
-      data: groupParl3,
+      data: groupGrando2,
       dataLabels: {
         enabled: false,
         format: "{point.label}",

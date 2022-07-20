@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import base from "./api/base";
-import { group1Type } from "../model/groupsType";
+import { paliotta2Type } from "../model/groupsType";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
@@ -8,7 +8,7 @@ import { councilData } from "../functions/councilData";
 import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParl1 } from "../data/parliament-chart/parlOpt1";
+import { optionsPaliotta2 } from "../data/parliament-chart/parlPaliotta2";
 import { optionsBar } from "../data/bar-chart/barOpt";
 
 // Version in use
@@ -24,7 +24,7 @@ export async function getStaticProps() {
 }
 
 interface MyProps {
-  data: group1Type[];
+  data: paliotta2Type[];
 }
 
 const Paliotta2: NextPage<MyProps> = (props) => {
@@ -96,7 +96,7 @@ const Paliotta2: NextPage<MyProps> = (props) => {
         spacing={[12, 12, 12, 8]}
         align="center"
       >
-        <ChartParliament my_options={optionsParl1} />
+        <ChartParliament my_options={optionsPaliotta2} />
         <Card
           {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={16}

@@ -1,24 +1,23 @@
-const groupParl2 = [
-  ["Cuori Ladispolani", 7, "#073D74"],
-  ["Noi con Salvini", 5, "#09529A"],
-  ["Fratelli d'Italia", 3, "#0B66C1"],
-  ["Alessandro Grando", 1, "#0D7AE7"],
+const groupPaliotta2 = [
+  ["Partito Democraticco", 4, "#073D74"],
+  ["Ladispoli Città", 3, "#09529A"],
+  ["Italia dei Valori", 2, "#0B66C1"],
+  ["Crescenzo Paliotta", 1, "#0D7AE7"],
 
-  ["Partito Democratico", 2, "#8F001A"],
-  ["Ladispoli Città", 2, "#B80022"],
-  ["Marco Pierini", 1, "#E00029"],
+  ["Il Popolo della Libertà", 3, "#8F001A"],
+  ["Città Nuove", 1, "#B80022"],
+  ["Agostino Agaro", 1, "#E00029"],
 
-  ["Giuseppe Loddo", 1, "#548C2F"],
+  ["Emanuele Cagiola", 1, "#548C2F"],
 
-  ["Antonio Pizzuti Piccoli", 1, "#FFC919"],
-  ["Movimento 5 Stelle", 2, "#FFD449"],
+  ["Maria Concetta Palermo", 1, "#FFD449"],
 ];
 
-export const optionsParl2 = {
+export const optionsPaliotta2 = {
   chart: {
     type: "item",
     borderRadius: 20,
-    backgroundColor: "#ECE2D0", //ECE2D0
+    backgroundColor: "#ECE2D0",
     style: {
       fontFamily:
         "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
@@ -33,6 +32,9 @@ export const optionsParl2 = {
           },
         },
       },
+    },
+    item: {
+      innerSize: "20%",
     },
   },
   credits: {
@@ -59,7 +61,7 @@ export const optionsParl2 = {
     {
       name: "Rappresentanti",
       keys: ["name", "y", "color", "label"],
-      data: groupParl2,
+      data: groupPaliotta2,
       dataLabels: {
         enabled: false,
         format: "{point.label}",
@@ -67,7 +69,7 @@ export const optionsParl2 = {
 
       // Circular options
       center: ["50%", "85%"],
-      size: "180%",
+      size: "175%",
       startAngle: -100,
       endAngle: 100,
     },
@@ -107,14 +109,14 @@ export const optionsParl2 = {
         },
         chartOptions: {
           legend: {
-            x: 10,
+            x: 25,
             y: 0,
           },
           series: [
             {
               // Circular options
               center: ["50%", "80%"],
-              size: "180%",
+              size: "160%",
               startAngle: -100,
               endAngle: 100,
             },
@@ -128,12 +130,9 @@ export const optionsParl2 = {
         },
         chartOptions: {
           legend: {
-            itemStyle: {
-              fontSize: "9px",
-            },
             width: 400,
-            x: 45,
-            y: -30,
+            x: 30,
+            y: 0,
           },
           series: [
             {

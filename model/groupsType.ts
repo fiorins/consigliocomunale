@@ -1,6 +1,6 @@
 // data object created thanks to http://json2ts.com
 
-export interface group1Type {
+export interface paliotta2Type {
   id: string;
   Consiglio_Num: number;
   Delibera_Num: number;
@@ -27,7 +27,7 @@ export interface group1Type {
   Ruscito?: number;
 }
 
-export interface group2Type {
+export interface grando1Type {
   id: string;
   Consiglio_Num: number;
   Delibera_Num: number;
@@ -65,7 +65,7 @@ export interface group2Type {
   Trani?: number;
 }
 
-export interface group3Type {
+export interface grando2Type {
   id: string;
   Consiglio_Num: number;
   Delibera_Num: number;
