@@ -8,8 +8,8 @@ import { councilData } from "../functions/councilData";
 import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParl } from "../data/parliament-chart/parlGrando2";
-import { optionsBar } from "../data/bar-chart/barOpt";
+import { optionsParl } from "../data/parliament-chart/parlOptGrando2";
+import { optionsBarDesktop, optionsBarMobile } from "../data/bar-chart/barOpt";
 
 export async function getStaticProps() {
   const result = await base("Grando_2").select({}).all();
@@ -43,22 +43,11 @@ const Grando2: NextPage<MyProps> = (props) => {
     subtitle: "2022-....",
   };
 
-  const optionsBarDesktop = {
-    indexAxis: "x",
-    aspectRatio: 2,
-    ...optionsBar,
-  };
-  const optionsBarMobile = {
-    indexAxis: "y",
-    aspectRatio: 0.5,
-    ...optionsBar,
-  };
-
   return (
     <VStack spacing={8}>
       <Stack
         direction={{ base: "column", lg: "row" }}
-        spacing={0}
+        spacing={{ base: 4, lg: 0 }}
         align="center"
       >
         <ChartParliament my_options={optionsParl} />

@@ -1,19 +1,20 @@
-const groupPaliotta2 = [
-  ["Partito Democraticco", 4, "#073D74"],
-  ["Ladispoli Città", 3, "#09529A"],
-  ["Italia dei Valori", 2, "#0B66C1"],
-  ["Crescenzo Paliotta", 1, "#0D7AE7"],
+const groupGrando1 = [
+  ["Cuori Ladispolani", 7, "#073D74"],
+  ["Noi con Salvini", 5, "#09529A"],
+  ["Fratelli d'Italia", 3, "#0B66C1"],
+  ["Alessandro Grando", 1, "#0D7AE7"],
 
-  ["Il Popolo della Libertà", 3, "#8F001A"],
-  ["Città Nuove", 1, "#B80022"],
-  ["Agostino Agaro", 1, "#E00029"],
+  ["Partito Democratico", 2, "#8F001A"],
+  ["Ladispoli Città", 2, "#B80022"],
+  ["Marco Pierini", 1, "#E00029"],
 
-  ["Emanuele Cagiola", 1, "#548C2F"],
+  ["Giuseppe Loddo", 1, "#548C2F"],
 
-  ["Maria Concetta Palermo", 1, "#FFD449"],
+  ["Antonio Pizzuti Piccoli", 1, "#FFC919"],
+  ["Movimento 5 Stelle", 2, "#FFD449"],
 ];
 
-export const optionsParlPaliotta2 = {
+export const optionsParl = {
   chart: {
     type: "item",
     borderRadius: 20,
@@ -32,9 +33,6 @@ export const optionsParlPaliotta2 = {
           },
         },
       },
-    },
-    item: {
-      innerSize: "20%",
     },
   },
   credits: {
@@ -61,7 +59,7 @@ export const optionsParlPaliotta2 = {
     {
       name: "Rappresentanti",
       keys: ["name", "y", "color", "label"],
-      data: groupPaliotta2,
+      data: groupGrando1,
       dataLabels: {
         enabled: false,
         format: "{point.label}",
@@ -69,7 +67,7 @@ export const optionsParlPaliotta2 = {
 
       // Circular options
       center: ["50%", "85%"],
-      size: "175%",
+      size: "180%",
       startAngle: -100,
       endAngle: 100,
     },
@@ -81,7 +79,7 @@ export const optionsParlPaliotta2 = {
       {
         condition: {
           maxWidth: 2048,
-          minWidth: 779,
+          minWidth: 680,
         },
         chartOptions: {
           chart: {
@@ -104,19 +102,23 @@ export const optionsParlPaliotta2 = {
       },
       {
         condition: {
-          maxWidth: 778,
-          minWidth: 540,
+          maxWidth: 679,
+          minWidth: 520,
         },
         chartOptions: {
           legend: {
-            x: 25,
+            itemStyle: {
+              fontSize: "10px",
+            },
+            width: 600,
+            x: 65,
             y: 0,
           },
           series: [
             {
               // Circular options
               center: ["50%", "80%"],
-              size: "160%",
+              size: "180%",
               startAngle: -100,
               endAngle: 100,
             },
@@ -125,14 +127,17 @@ export const optionsParlPaliotta2 = {
       },
       {
         condition: {
-          maxWidth: 539,
+          maxWidth: 519,
           minWidth: 310,
         },
         chartOptions: {
           legend: {
+            itemStyle: {
+              fontSize: "9px",
+            },
             width: 400,
-            x: 30,
-            y: 0,
+            x: 45,
+            y: -30,
           },
           series: [
             {

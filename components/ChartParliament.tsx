@@ -14,7 +14,12 @@ type ParlProps = {
 
 export const ChartParliament: React.FC<ParlProps> = (props) => {
   return (
-    <Box rounded="3xl" bg="#ECE2D0" w={[300, 400, 550, 800]} p={3.5}>
+    <Box
+      rounded="3xl"
+      bg="#ECE2D0"
+      w={{ base: 300, md: 650, lg: 750, xl: 900 }}
+      p={0}
+    >
       <HighchartsReact highcharts={Highcharts} options={props.my_options} />
     </Box>
   );

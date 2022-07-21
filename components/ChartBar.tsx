@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
-import { Box, VStack, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, VStack, Text } from "@chakra-ui/react";
 
 ChartJS.register(
   CategoryScale,
@@ -30,9 +30,16 @@ type BarProps = {
 
 export const ChartBar: React.FC<BarProps> = (props) => {
   return (
-    <Box rounded="3xl" bg="orange.50" py={6} px={8} w={["100%"]}>
+    <Box rounded="3xl" bg="orange.50" w={["100%"]}>
       <VStack>
-        <Text textAlign="center" color="black" fontSize="lg" fontWeight="700">
+        <Text
+          pt={6}
+          px={8}
+          textAlign="center"
+          color="black"
+          fontSize="lg"
+          fontWeight="700"
+        >
           Presenze e Assenze dei consiglieri alle delibere comunali
         </Text>
         <Bar
