@@ -5,7 +5,6 @@ export const optionsBar = {
     },
     title: {
       display: false,
-      text: "My Title",
     },
     datalabels: {
       color: "white",

@@ -39,7 +39,7 @@ const Grando1: NextPage<MyProps> = (props) => {
   const councilors_data = councilorsData(props.data, councilors_list);
   const council_data = councilData(props.data);
 
-  const [isMobile] = useMediaQuery("(max-width: 500px)");
+  const [isMobile] = useMediaQuery("(max-width: 999px)");
 
   const defaultTitle = {
     title: "Statistiche Consiliatura 2017-2022",
@@ -64,8 +64,8 @@ const Grando1: NextPage<MyProps> = (props) => {
   return (
     <VStack spacing={8}>
       <Stack
-        direction={["column", "column", "column", "row"]}
-        spacing={[12, 12, 12, 8]}
+        direction={{ base: "column", lg: "row" }}
+        spacing={0}
         align="center"
       >
         <ChartParliament my_options={optionsGrando1} />

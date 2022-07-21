@@ -83,7 +83,7 @@ export const optionsGrando2 = {
       {
         condition: {
           maxWidth: 2048,
-          minWidth: 779,
+          minWidth: 680,
         },
         chartOptions: {
           chart: {
@@ -106,12 +106,16 @@ export const optionsGrando2 = {
       },
       {
         condition: {
-          maxWidth: 778,
-          minWidth: 540,
+          maxWidth: 679,
+          minWidth: 520,
         },
         chartOptions: {
           legend: {
-            x: 10,
+            itemStyle: {
+              fontSize: "10px",
+            },
+            width: 600,
+            x: 65,
             y: 0,
           },
           series: [
@@ -127,7 +131,7 @@ export const optionsGrando2 = {
       },
       {
         condition: {
-          maxWidth: 539,
+          maxWidth: 519,
           minWidth: 310,
         },
         chartOptions: {
@@ -150,6 +154,31 @@ export const optionsGrando2 = {
           ],
         },
       },
+      // {
+      //   condition: {
+      //     maxWidth: 309,
+      //     minWidth: 200,
+      //   },
+      //   chartOptions: {
+      //     legend: {
+      //       itemStyle: {
+      //         fontSize: "8px",
+      //       },
+      //       width: 300,
+      //       x: 7,
+      //       y: -20,
+      //     },
+      //     series: [
+      //       {
+      //         // Circular options
+      //         center: ["50%", "70%"],
+      //         size: "130%",
+      //         startAngle: -100,
+      //         endAngle: 100,
+      //       },
+      //     ],
+      //   },
+      // },
     ],
   },
 };

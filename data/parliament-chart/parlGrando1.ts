@@ -129,7 +129,7 @@ export const optionsGrando1 = {
         chartOptions: {
           legend: {
             itemStyle: {
-              fontSize: "9px",
+              fontSize: "11px",
             },
             width: 400,
             x: 45,
