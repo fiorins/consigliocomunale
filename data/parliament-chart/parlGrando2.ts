@@ -18,7 +18,7 @@ const groupGrando2 = [
   ["Amelia Mollica Graziano", 1, "#FFD449"],
 ];
 
-export const optionsGrando2 = {
+export const optionsParl = {
   chart: {
     type: "item",
     borderRadius: 20,

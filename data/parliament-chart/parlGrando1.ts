@@ -14,7 +14,7 @@ const groupGrando1 = [
   ["Movimento 5 Stelle", 2, "#FFD449"],
 ];
 
-export const optionsGrando1 = {
+export const optionsParl = {
   chart: {
     type: "item",
     borderRadius: 20,

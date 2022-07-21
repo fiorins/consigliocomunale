@@ -13,7 +13,7 @@ const groupPaliotta2 = [
   ["Maria Concetta Palermo", 1, "#FFD449"],
 ];
 
-export const optionsPaliotta2 = {
+export const optionsParlPaliotta2 = {
   chart: {
     type: "item",
     borderRadius: 20,

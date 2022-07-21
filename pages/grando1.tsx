@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsGrando1 } from "../data/parliament-chart/parlGrando1";
+import { optionsParl } from "../data/parliament-chart/parlGrando1";
 import { optionsBar } from "../data/bar-chart/barOpt";
 
 export async function getStaticProps() {
@@ -68,7 +68,7 @@ const Grando1: NextPage<MyProps> = (props) => {
         spacing={0}
         align="center"
       >
-        <ChartParliament my_options={optionsGrando1} />
+        <ChartParliament my_options={optionsParl} />
         <Card
           {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
           councilors={24}
