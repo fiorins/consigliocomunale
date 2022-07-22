@@ -12,11 +12,15 @@ import {
   Text,
   UnorderedList,
   ListItem,
+  Tag,
+  TagLeftIcon,
+  TagLabel,
 } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
 import { optionsParl } from "../data/parliament-chart/parlOptGrando1";
 import { optionsBarDesktop, optionsBarMobile } from "../data/bar-chart/barOpt";
+import { IoMdArrowRoundDown, IoMdArrowRoundUp } from "react-icons/io";
 
 export async function getStaticProps() {
   const result = await base("Grando_1").select({}).all();
@@ -51,7 +55,7 @@ const Grando1: NextPage<MyProps> = (props) => {
   };
 
   return (
-    <VStack spacing={8}>
+    <VStack spacing={{ base: 8, lg: 12 }}>
       <Stack
         direction={{ base: "column", lg: "row" }}
         spacing={{ base: 4, lg: 0 }}
@@ -80,12 +84,52 @@ const Grando1: NextPage<MyProps> = (props) => {
         fontWeight="500"
         as="span"
       >
-        Consiglieri dimissionari:
-        <UnorderedList textAlign="left">
-          <ListItem>Falasca lascia il 21/05/2018 ed entra Marongiu D</ListItem>
-          <ListItem>Forchetta lascia il 14/05/2019 ed entra Ciampa</ListItem>
+        Consiglieri dimissionari e subentri:
+        <UnorderedList textAlign="left" spacing={1} p={2}>
           <ListItem>
-            Pizzuti Piccoli lascia il 16/03/2021 ed entra Martello
+            <Text fontSize="sm">
+              21/05/2018:&nbsp;&nbsp;&nbsp;
+              <Tag size={"sm"} variant="subtle" colorScheme="red">
+                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundDown} />
+                <TagLabel>Esce</TagLabel>
+              </Tag>
+              &nbsp;Falasca&nbsp;&nbsp;ed&nbsp;&nbsp;&nbsp;
+              <Tag size={"sm"} variant="subtle" colorScheme="green">
+                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundUp} />
+                <TagLabel>Entra</TagLabel>
+              </Tag>
+              &nbsp;Marongiu D
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text fontSize="sm">
+              14/05/2019:&nbsp;&nbsp;&nbsp;
+              <Tag size={"sm"} variant="subtle" colorScheme="red">
+                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundDown} />
+                <TagLabel>Esce</TagLabel>
+              </Tag>
+              &nbsp;Forchetta&nbsp;&nbsp;ed&nbsp;&nbsp;&nbsp;
+              <Tag size={"sm"} variant="subtle" colorScheme="green">
+                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundUp} />
+                <TagLabel>Entra</TagLabel>
+              </Tag>
+              &nbsp;Ciampa
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text fontSize="sm">
+              16/03/2021:&nbsp;&nbsp;&nbsp;
+              <Tag size={"sm"} variant="subtle" colorScheme="red">
+                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundDown} />
+                <TagLabel>Esce</TagLabel>
+              </Tag>
+              &nbsp;Pizzuti Piccoli&nbsp;&nbsp;ed&nbsp;&nbsp;&nbsp;
+              <Tag size={"sm"} variant="subtle" colorScheme="green">
+                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundUp} />
+                <TagLabel>Entra</TagLabel>
+              </Tag>
+              &nbsp;Martello
+            </Text>
           </ListItem>
         </UnorderedList>
       </Text>

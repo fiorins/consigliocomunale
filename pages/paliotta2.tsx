@@ -79,7 +79,7 @@ const Paliotta2: NextPage<MyProps> = (props) => {
   };
 
   return (
-    <VStack spacing={8}>
+    <VStack spacing={{ base: 8, lg: 12 }}>
       <Stack
         direction={{ base: "column", lg: "row" }}
         spacing={{ base: 4, lg: 0 }}

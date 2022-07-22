@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Center, Text } from "@chakra-ui/react";
+import { Badge, Center } from "@chakra-ui/react";
 
 const TableBadgeCell = ({ textCell }: any) => {
   return (

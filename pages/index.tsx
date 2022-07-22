@@ -1,10 +1,8 @@
 import type { NextPage } from "next";
 import React, { useEffect } from "react";
-import Head from "next/head";
-import Image from "next/image";
 import Router from "next/router";
 import { SpinnerCircular } from "spinners-react";
-import { Center, Box, HStack } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   //redirect to my last page
