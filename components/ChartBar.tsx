@@ -7,7 +7,7 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "Chart.js";
+} from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
 import { Box, VStack, Text } from "@chakra-ui/react";
