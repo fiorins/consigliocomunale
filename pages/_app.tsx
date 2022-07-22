@@ -13,7 +13,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Ladispoli - Consiglio Comunale</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="../public/favicon.ico"
+        />
         <meta name="theme-color" content="#2BB0EC" />
       </Head>
       <VStack minH="100vh" align="stretch" spacing={0}>
