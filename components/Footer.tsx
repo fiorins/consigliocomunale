@@ -25,7 +25,7 @@ const Footer = () => {
       <Center>
         <Text>
           Trovi&nbsp;
-          <Link href="https://github.com" isExternal>
+          <Link href="https://github.com/fiorins/consigliocomunale" isExternal>
             <Text as="u">qui</Text>
           </Link>
           &nbsp;il codice sorgente&nbsp;
