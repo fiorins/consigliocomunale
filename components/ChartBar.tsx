@@ -1,26 +1,10 @@
 import React from "react";
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  BarElement,
-  LinearScale,
-} from "chart.js";
+import Chart from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
 import { Box, VStack, Text } from "@chakra-ui/react";
 
-ChartJS.register(
-  Title,
-  Tooltip,
-  Legend,
-  ChartDataLabels,
-  LinearScale,
-  BarElement,
-  CategoryScale
-);
+Chart.register(ChartDataLabels);
 
 type BarProps = {
   my_options: object;
