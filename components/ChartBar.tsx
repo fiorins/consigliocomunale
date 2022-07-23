@@ -1,10 +1,10 @@
 import React from "react";
-import Chart from "chart.js/auto";
+import { Chart, registerables } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
 import { Box, VStack, Text } from "@chakra-ui/react";
 
-Chart.register(ChartDataLabels);
+Chart.register(ChartDataLabels, ...registerables);
 
 type BarProps = {
   my_options: object;
