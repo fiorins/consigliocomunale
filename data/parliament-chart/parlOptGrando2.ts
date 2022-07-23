@@ -154,31 +154,17 @@ export const optionsParl = {
           ],
         },
       },
-      // {
-      //   condition: {
-      //     maxWidth: 309,
-      //     minWidth: 200,
-      //   },
-      //   chartOptions: {
-      //     legend: {
-      //       itemStyle: {
-      //         fontSize: "8px",
-      //       },
-      //       width: 300,
-      //       x: 7,
-      //       y: -20,
-      //     },
-      //     series: [
-      //       {
-      //         // Circular options
-      //         center: ["50%", "70%"],
-      //         size: "130%",
-      //         startAngle: -100,
-      //         endAngle: 100,
-      //       },
-      //     ],
-      //   },
-      // },
+      {
+        condition: {
+          maxWidth: 309,
+          minWidth: 200,
+        },
+        chartOptions: {
+          legend: {
+            x: 5,
+          },
+        },
+      },
     ],
   },
 };
