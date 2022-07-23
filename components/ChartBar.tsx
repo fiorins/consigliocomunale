@@ -13,13 +13,13 @@ import { Bar } from "react-chartjs-2";
 import { Box, VStack, Text } from "@chakra-ui/react";
 //comment
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
   Title,
   Tooltip,
   Legend,
-  ChartDataLabels
+  ChartDataLabels,
+  LinearScale,
+  BarElement,
+  CategoryScale
 );
 
 type BarProps = {
