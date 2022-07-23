@@ -5,8 +5,8 @@ import {
   Tooltip,
   Legend,
   CategoryScale,
-  LinearScale,
   BarElement,
+  LinearScale,
 } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
