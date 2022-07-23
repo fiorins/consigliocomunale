@@ -4,7 +4,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
 import { Box, VStack, Text } from "@chakra-ui/react";
 
-Chart.register(ChartDataLabels);
+Chart.register(ChartDataLabels); //register chartjs plugins
 
 type BarProps = {
   my_options: object;
