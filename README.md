@@ -34,4 +34,4 @@ I created some functions to retrieve data from tables, you can find them into fu
 
 Code is public so the model can be used for any other municipality, by uploading the data for that municipality or using APIs if they already exist.
 
-This project is licensed under the MIT license. See the [LICENSE](./LICENSE) file for more info.
+This project is licensed under the MIT license. See the [LICENSE](./LICENSE.md) file for more info.
