@@ -14,12 +14,14 @@ import { optionsBarDesktop, optionsBarMobile } from "../data/bar-chart/barOpt";
 // Version in use
 export async function getStaticProps() {
   const result = await base("Paliotta_2").select({}).all();
+
   return {
     props: {
       data: result.map((record) => {
         return { id: record.id, ...record.fields };
       }),
     },
+    revalidate: 86400,
   };
 }
 

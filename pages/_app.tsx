@@ -1,13 +1,18 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import React from "react";
+import React, { useEffect } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Box, VStack } from "@chakra-ui/react";
+import splitbee from "@splitbee/web";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect((): void => {
+    splitbee.init();
+  }, []);
+
   return (
     <ChakraProvider>
       <Head>

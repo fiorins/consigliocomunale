@@ -12,15 +12,12 @@ import {
   Text,
   UnorderedList,
   ListItem,
-  Tag,
-  TagLeftIcon,
-  TagLabel,
 } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
+import ChangeCouncilor from "../components/ChangeCouncilor";
 import { ChartParliament } from "../components/ChartParliament";
 import { optionsParl } from "../data/parliament-chart/parlOptGrando1";
 import { optionsBarDesktop, optionsBarMobile } from "../data/bar-chart/barOpt";
-import { IoMdArrowRoundDown, IoMdArrowRoundUp } from "react-icons/io";
 
 export async function getStaticProps() {
   const result = await base("Grando_1").select({}).all();
@@ -31,6 +28,7 @@ export async function getStaticProps() {
         return { id: record.id, ...record.fields };
       }),
     },
+    revalidate: 86400,
   };
 }
 
@@ -87,49 +85,25 @@ const Grando1: NextPage<MyProps> = (props) => {
         Consiglieri dimissionari e subentri:
         <UnorderedList textAlign="left" spacing={1} p={2}>
           <ListItem>
-            <Text fontSize="sm">
-              21/05/2018:&nbsp;&nbsp;&nbsp;
-              <Tag size={"sm"} variant="subtle" colorScheme="red">
-                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundDown} />
-                <TagLabel>Esce</TagLabel>
-              </Tag>
-              &nbsp;Falasca&nbsp;&nbsp;ed&nbsp;&nbsp;&nbsp;
-              <Tag size={"sm"} variant="subtle" colorScheme="green">
-                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundUp} />
-                <TagLabel>Entra</TagLabel>
-              </Tag>
-              &nbsp;Marongiu D
-            </Text>
+            <ChangeCouncilor
+              date="21/05/2018"
+              councilorOut="Falasca"
+              councilorIn="Marongiu D"
+            />
           </ListItem>
           <ListItem>
-            <Text fontSize="sm">
-              14/05/2019:&nbsp;&nbsp;&nbsp;
-              <Tag size={"sm"} variant="subtle" colorScheme="red">
-                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundDown} />
-                <TagLabel>Esce</TagLabel>
-              </Tag>
-              &nbsp;Forchetta&nbsp;&nbsp;ed&nbsp;&nbsp;&nbsp;
-              <Tag size={"sm"} variant="subtle" colorScheme="green">
-                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundUp} />
-                <TagLabel>Entra</TagLabel>
-              </Tag>
-              &nbsp;Ciampa
-            </Text>
+            <ChangeCouncilor
+              date="14/05/2019"
+              councilorOut="Forchetta"
+              councilorIn="Ciampa"
+            />
           </ListItem>
           <ListItem>
-            <Text fontSize="sm">
-              16/03/2021:&nbsp;&nbsp;&nbsp;
-              <Tag size={"sm"} variant="subtle" colorScheme="red">
-                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundDown} />
-                <TagLabel>Esce</TagLabel>
-              </Tag>
-              &nbsp;Pizzuti Piccoli&nbsp;&nbsp;ed&nbsp;&nbsp;&nbsp;
-              <Tag size={"sm"} variant="subtle" colorScheme="green">
-                <TagLeftIcon boxSize="12px" as={IoMdArrowRoundUp} />
-                <TagLabel>Entra</TagLabel>
-              </Tag>
-              &nbsp;Martello
-            </Text>
+            <ChangeCouncilor
+              date="16/03/2021"
+              councilorOut="Pizzuti Piccoli"
+              councilorIn="Martello"
+            />
           </ListItem>
         </UnorderedList>
       </Text>

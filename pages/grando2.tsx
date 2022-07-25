@@ -20,6 +20,7 @@ export async function getStaticProps() {
         return { id: record.id, ...record.fields };
       }),
     },
+    revalidate: 86400,
   };
 }
 

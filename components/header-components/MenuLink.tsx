@@ -10,11 +10,11 @@ type Props = {
 
 const MenuLink = ({ href, textButton }: Props) => {
   const router = useRouter();
-  const isActive = router.pathname === href; //to do condizione confronto con href e renderlo booleano questo
+  const isActive = router.pathname === href;
 
   const button_active = {
     bg: "red.700",
-    color: "orange.50", //"white"
+    color: "orange.50",
     _hover: {
       background: "red.700",
       color: "orange.50",
@@ -27,7 +27,7 @@ const MenuLink = ({ href, textButton }: Props) => {
   const button_inactive = {
     variant: "ghost",
     bg: "",
-    color: "red.700", //"white"
+    color: "red.700",
     _hover: {
       background: "red.50",
       color: "red.700",
@@ -40,7 +40,7 @@ const MenuLink = ({ href, textButton }: Props) => {
   const button_inactive_alt = {
     variant: "outline",
     color: "red.700",
-    borderColor: "red.700", //"white"
+    borderColor: "red.700",
     _hover: {
       background: "red.50",
       color: "red.700",
