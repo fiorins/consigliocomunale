@@ -11,8 +11,8 @@ export const councilorsData = (my_data: any, my_list: any) => {
       sums[entry[i]] = (sums[entry[i]] || 0) + 1;
       return sums;
     }, {});
-    attendances.push(result[1]); //pick presence
-    absences.push(result[0]); //pick absence
+    attendances.push(result[1]); //add presence
+    absences.push(result[0]); //add absence
   });
 
   councilors_data.push(attendances, absences);

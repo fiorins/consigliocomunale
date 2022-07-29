@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import base from "./api/base";
+import base from "../functions/base";
 import { grando2Type } from "../model/groupsType";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";

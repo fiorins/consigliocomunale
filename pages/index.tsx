@@ -5,13 +5,14 @@ import { SpinnerCircular } from "spinners-react";
 import { Center } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
-  //redirect to my last page
+  //redirect to my home page
   useEffect(() => {
     const { pathname } = Router;
     if (pathname === "/") {
       Router.push("/grando1");
     }
   });
+
   return (
     <Center p={16 * 2}>
       <SpinnerCircular color="#9B2C2C" />

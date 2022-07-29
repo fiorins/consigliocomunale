@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import base from "./api/base";
+import base from "../functions/base";
 import { paliotta2Type } from "../model/groupsType";
 import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
@@ -11,7 +11,7 @@ import { ChartParliament } from "../components/ChartParliament";
 import { optionsParl } from "../data/parliament-chart/parlOptPaliotta2";
 import { optionsBarDesktop, optionsBarMobile } from "../data/bar-chart/barOpt";
 
-// Version in use
+/* Active version */
 export async function getStaticProps() {
   const result = await base("Paliotta_2").select({}).all();
 
@@ -30,13 +30,13 @@ interface MyProps {
 }
 
 const Paliotta2: NextPage<MyProps> = (props) => {
-  //const [data, setData] = useState<any>([]);
-
-  // Alternate version 1
+  // const [data, setData] = useState<any>([]);
   // useEffect(() => {
   //   base("Paliotta_2")
   //     .select({ view: "Grid view" })
   //     .eachPage((records: any, fetchNextPage) => {
+
+  /* Alternate version 1 */
   //       setData((prev: any) => [
   //         ...prev,
   //         ...records.map((record: any) => {
@@ -44,23 +44,14 @@ const Paliotta2: NextPage<MyProps> = (props) => {
   //         }),
   //       ]);
 
-  //       fetchNextPage();
-  //     });
-  // }, []);
-
-  // Alternate version 2
-  // useEffect(() => {
-  //   let my_state: any = [];
-
-  //   base("Paliotta_2")
-  //     .select({ view: "Grid view" })
-  //     .eachPage((records: any, fetchNextPage) => {
+  /* Alternate version 2 */
   //       my_state.push(
   //         ...records.map((record: any) => {
   //           return { id: record.id, ...record.fields };
   //         })
   //       );
   //       setData(my_state);
+
   //       fetchNextPage();
   //     });
   // }, []);

@@ -38,17 +38,19 @@ export const councilData = (my_data: any) => {
   councils_resolutions.push(councils, resolutions);
 
   //count councils through all years
-  const councils_tot = councils.reduce(
+  const tot_councils = councils.reduce(
     (partialSum: number, a: number) => partialSum + a,
     0
   );
 
   //count resolutions through all years
-  const resolutions_tot = resolutions.reduce(
+  const tot_resolutions = resolutions.reduce(
     (partialSum: number, a: number) => partialSum + a,
     0
   );
 
-  council_data.push(councils_tot, resolutions_tot, years, councils_resolutions);
+  //put everything inside an array and then get the data through the indexes
+  council_data.push(tot_councils, tot_resolutions, years, councils_resolutions);
+
   return council_data;
 };
