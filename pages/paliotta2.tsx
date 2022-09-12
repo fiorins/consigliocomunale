@@ -8,8 +8,11 @@ import { councilData } from "../functions/councilData";
 import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
-import { optionsParl } from "../data/parliament-chart/parlOptPaliotta2";
-import { optionsBarDesktop, optionsBarMobile } from "../data/bar-chart/barOpt";
+import { optionsParl } from "../chart-options/parliament-chart/parlOptPaliotta2";
+import {
+  optionsBarDesktop,
+  optionsBarMobile,
+} from "../chart-options/bar-chart/barOpt";
 
 /* Active version */
 export async function getStaticProps() {
