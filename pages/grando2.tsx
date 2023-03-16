@@ -5,7 +5,13 @@ import { Card } from "../components/Card";
 import { councilorsList } from "../functions/councilorsList";
 import { councilorsData } from "../functions/councilorsData";
 import { councilData } from "../functions/councilData";
-import { Stack, useMediaQuery, VStack } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertIcon,
+  Stack,
+  useMediaQuery,
+  VStack,
+} from "@chakra-ui/react";
 import { ChartBar } from "../components/ChartBar";
 import { ChartParliament } from "../components/ChartParliament";
 import { optionsParl } from "../chart-options/parliament-chart/parlOptGrando2";
@@ -55,15 +61,21 @@ const Grando2: NextPage<MyProps> = (props) => {
         align="center"
       >
         <ChartParliament my_options={optionsParl} />
-        <Card
-          {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
-          councilors={24}
-          councilsTot={council_data[0]}
-          resolutionsTot={council_data[1]}
-          yearsList={council_data[2]}
-          councilsPerYear={council_data[3][0]}
-          resolutionsPerYear={council_data[3][1]}
-        />
+        <VStack spacing={{ base: 2, lg: 4 }}>
+          <Card
+            {...(isMobile ? { ...mobileTitle } : { ...defaultTitle })}
+            councilors={24}
+            councilsTot={council_data[0]}
+            resolutionsTot={council_data[1]}
+            yearsList={council_data[2]}
+            councilsPerYear={council_data[3][0]}
+            resolutionsPerYear={council_data[3][1]}
+          />
+          <Alert status="info" colorScheme="gray" rounded="3xl">
+            <AlertIcon />
+            Dati aggiornati al {council_data[4]}
+          </Alert>
+        </VStack>
       </Stack>
       <ChartBar
         my_options={isMobile ? optionsBarMobile : optionsBarDesktop}

@@ -18,7 +18,7 @@ const Footer = () => {
         <Link href="http://89.97.181.229" isExternal>
           <Text as="u">albo pretorio</Text>
         </Link>
-        &nbsp;di Ladispoli&nbsp;
+        &nbsp;comunale&nbsp;
         <Icon as={HiDatabase} verticalAlign="sub" />
       </Text>
 
